@@ -2,6 +2,12 @@ import styled from 'styled-components';
 
 import NavigationBar from 'src/components/NavigationBar';
 import BottomNavigationBar from 'src/components/BottomNavigationBar';
+import Hero from 'src/pages/home/hero';
+import LatestEvents from 'src/pages/home/latestEvents';
+import PolicyIssues from 'src/pages/home/policyIssues';
+import SmallDonations from 'src/pages/home/smallDonations';
+import PublicServiceInbox from 'src/pages/home/publicServiceInbox';
+import Footer from 'src/pages/home/footer';
 
 const Container = styled.div`
   height: 100vh;
@@ -19,7 +25,14 @@ const Home = () => {
   return (
     <Container>
       <NavigationBar />
-      <Content>Home</Content>
+      <Content>
+        <Hero />
+        <LatestEvents />
+        <PolicyIssues />
+        <SmallDonations />
+        <PublicServiceInbox />
+      </Content>
+      <Footer />
       <BottomNavigationBar />
     </Container>
   );

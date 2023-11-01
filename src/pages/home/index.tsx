@@ -8,7 +8,7 @@ const Container = styled.div`
   overflow: auto;
   display: flex;
   flex-direction: column;
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
 `;
 
 const Content = styled.div`

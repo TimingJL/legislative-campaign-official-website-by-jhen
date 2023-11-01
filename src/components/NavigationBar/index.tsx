@@ -8,13 +8,17 @@ const Container = styled.nav`
   position: sticky;
   top: 0px;
   padding: 16px 24px;
+  background: #fff;
+  @media ${props => props.theme.device.desktop} {
+    background: var(--bg-primary);
+  }
   @media ${props => props.theme.device.tablet} {
     padding: 0px;
   }
 `;
 
 const Box = styled.div`
-  background: var(--bg-primary);
+  background: #fff;
   display: flex;
   padding: var(--spacer-12, 12px) var(--spacer-24, 24px);
   justify-content: space-between;

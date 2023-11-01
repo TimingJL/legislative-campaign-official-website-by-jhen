@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
   --slate-700: #334155;
   --slate-800: #1E293B;
   --slate-900: #0F172A;
-  --primary-gradient: linear-gradient(90deg, #E5793B 1.54%, #FF4185 97.86%);
+  --primary-gradient: -webkit-linear-gradient(left, #E5793B 1.54%, #FF4185 97.86%);
   --primary-color: #DA7D4A;
   --text-primary: var(--slate-700);
   --text-secondary: var(--slate-400);
@@ -116,8 +116,8 @@ li {
 }
 
 @font-face {
-  font-family: "MantouSans";
-  src: local("MantouSans"), url("src/font/MantouSans-Regular.ttf") format("truetype");
+  font-family: "Mantou Sans";
+  src: local("Mantou Sans"), url("src/font/MantouSans-Regular.ttf") format("truetype");
   font-weight: normal;
 }
 `;

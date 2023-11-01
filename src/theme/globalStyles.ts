@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
-import 'src/fonts/MantouSans-Regular.ttf';
+import 'src/font/MantouSans-Regular.ttf';
+import { device } from './breakpoints';
+
 
 const GlobalStyle = createGlobalStyle`
 :root {
@@ -7,9 +9,8 @@ const GlobalStyle = createGlobalStyle`
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* color-scheme: light dark; */
+  color: #343A40;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -34,11 +35,6 @@ const GlobalStyle = createGlobalStyle`
   --text-secondary: var(--slate-400);
   --bg-primary: #FDFCFB;
   --bg-secondary: #F7ECE1;
-
-  /* breakpoint */
-  --breakpoint-mobile: 375px;
-  --breakpoint-tablet: 768px;
-  --breakpoint-desktop: 1024px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -48,14 +44,13 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Inter;
   font-style: normal;
   font-weight: 700;
-  color: #343A40;
 }
 
 h1 {
   font-size: 40px;
-  line-height: 150%; /* 60px */
+  line-height: 1.5; /* 60px */
   letter-spacing: -0.8px;
-  @media (max-width: var(--breakpoint-mobile)) {
+  @media ${device.mobile} {
     font-size: 32px;
   }
 }
@@ -63,7 +58,7 @@ h1 {
 h2 {
   font-size: 32px;
   line-height: normal;
-  @media (max-width: var(--breakpoint-mobile)) {
+  @media ${device.mobile} {
     font-size: 24px;
   }
 }
@@ -71,7 +66,7 @@ h2 {
 h3 {
   font-size: 28px;
   line-height: normal;
-  @media (max-width: var(--breakpoint-mobile)) {
+  @media ${device.mobile} {
     font-size: 24px;
   }
 }
@@ -80,16 +75,16 @@ h4 {
   font-family: Inter;
   font-size: 24px;
   font-style: normal;
-  line-height: 150%; /* 36px */
-  @media (max-width: var(--breakpoint-mobile)) {
-    font-size: 24px;
+  line-height: 1.5; /* 36px */
+  @media ${device.mobile} {
+    font-size: 20px;
   }
 }
 
 h5 {
   font-size: 20px;
   line-height: normal;
-  @media (max-width: var(--breakpoint-mobile)) {
+  @media ${device.mobile} {
     font-size: 20px;
   }
 }
@@ -97,22 +92,32 @@ h5 {
 h6 {
   font-size: 16px;
   line-height: normal;
-  @media (max-width: var(--breakpoint-mobile)) {
+  @media ${device.mobile} {
     font-size: 16px;
   }
 }
 
 body {
   font-size: 16px;
-  color: #343A40;
-  @media (max-width: var(--breakpoint-mobile)) {
+  padding: 0px;
+  margin: 0px;
+  @media ${device.mobile} {
     font-size: 16px;
   }
 }
 
+ol, ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+li {
+  list-style: none;
+}
+
 @font-face {
   font-family: "MantouSans";
-  src: local("MantouSans"), url("src/fonts/MantouSans-Regular.ttf") format("truetype");
+  src: local("MantouSans"), url("src/font/MantouSans-Regular.ttf") format("truetype");
   font-weight: normal;
 }
 `;

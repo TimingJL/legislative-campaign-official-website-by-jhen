@@ -12,5 +12,4 @@
 
 [頁面動畫 - Prototype](https://www.figma.com/proto/DCnuTZQ00D5VHiDkBLhxQ3/2023-The-F2E-立委競選官網?type=design&node-id=4964-1275&t=pYhBD9ZCPJ9H71SC-1&scaling=min-zoom&page-id=4964%3A967&starting-point-node-id=4964%3A1197)
 
-
 [饅頭黑體](https://github.com/mant0u0/MantouSans?fbclid=IwAR0J48AssV-iZ-)

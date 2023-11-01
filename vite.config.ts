@@ -1,7 +1,31 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import svgr from 'vite-plugin-svgr';
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-})
+export default defineConfig(() => {
+  return {
+    // https://github.com/vitejs/vite/issues/1973#issuecomment-787571499
+    define: {
+      'process.env': {},
+    },
+    base: '/legislative-campaign-official-website-by-jhen',
+    resolve: {
+      alias: {
+        src: '/src',
+      },
+    },
+    server: {
+      host: 'localhost',
+      port: 3000,
+      open: true,
+    },
+    build: {
+      outDir: 'dist',
+    },
+    plugins: [
+      react(),
+      // svgr options: https://react-svgr.com/docs/options/
+      svgr({ svgrOptions: { icon: true } }),
+    ],
+  };
+});

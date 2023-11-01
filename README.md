@@ -1,6 +1,6 @@
 # 立委競選官網 by jhen
 
-[Guildeline 設計規範](ttps://www.figma.com/file/DCnuTZQ00D5VHiDkBLhxQ3/2023-The-F2E-立委競選官網?type=design&node-id=3888-1152&mode=design&t=CmSWiNxYlr8WvsRL-0)
+[Guildeline 設計規範](https://www.figma.com/file/DCnuTZQ00D5VHiDkBLhxQ3/2023-The-F2E-立委競選官網?type=design&node-id=3888-1152&mode=design&t=CmSWiNxYlr8WvsRL-0)
 
 [Mockup 設計稿](https://www.figma.com/file/DCnuTZQ00D5VHiDkBLhxQ3/2023-The-F2E-立委競選官網?node-id=4690%3A1607&mode=dev)
 

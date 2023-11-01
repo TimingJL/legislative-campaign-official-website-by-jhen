@@ -5,19 +5,6 @@ import { device } from './breakpoints';
 
 const GlobalStyle = createGlobalStyle`
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  /* color-scheme: light dark; */
-  color: #343A40;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-
   /* color */
   --slate-50: #F8FAFC;
   --slate-100: #F1F5F9;
@@ -35,6 +22,19 @@ const GlobalStyle = createGlobalStyle`
   --text-secondary: var(--slate-400);
   --bg-primary: #FDFCFB;
   --bg-secondary: #F7ECE1;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* color-scheme: light dark; */
+  color: var(--text-primary);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {

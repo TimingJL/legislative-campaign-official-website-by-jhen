@@ -17,7 +17,7 @@ const Container = styled.div`
   background: var(--bg-primary);
 `;
 
-const Content = styled.div`
+const Content = styled.main`
   flex: 1 1 auto;
 `;
 

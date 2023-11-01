@@ -74,12 +74,6 @@ const SocialMedia = styled.div`
     width: 32px;
     height: 32px;
   }
-  .icon-instagram {
-    padding: 2px;
-  }
-  .icon-youtube {
-    padding: 6px 2px;
-  }
   @media ${props => props.theme.device.tablet} {
     display: none;
   }

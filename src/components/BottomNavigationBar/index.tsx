@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import candidatePlatform from 'src/assets/icons/candidatePlatform.svg';
+import advocate from 'src/assets/icons/advocate.svg';
 import latestEvents from 'src/assets/icons/latestEvents.svg';
 import policyIssues from 'src/assets/icons/policyIssues.svg';
 import smallDonations from 'src/assets/icons/smallDonations.svg';
@@ -42,7 +42,7 @@ const BottomNavigationBar = () => {
     <Container>
       <Menu>
         <li>
-          <img src={candidatePlatform} />
+          <img src={advocate} />
           候選人主張
         </li>
         <li>

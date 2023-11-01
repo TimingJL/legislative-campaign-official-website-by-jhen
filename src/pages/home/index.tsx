@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import NavigationBar from 'src/components/NavigationBar';
 import BottomNavigationBar from 'src/components/BottomNavigationBar';
 import Hero from 'src/pages/home/hero';
+import Advocate from 'src/pages/home/advocate';
 import LatestEvents from 'src/pages/home/latestEvents';
 import PolicyIssues from 'src/pages/home/policyIssues';
 import SmallDonations from 'src/pages/home/smallDonations';
@@ -27,6 +28,7 @@ const Home = () => {
       <NavigationBar />
       <Content>
         <Hero />
+        <Advocate />
         <LatestEvents />
         <PolicyIssues />
         <SmallDonations />

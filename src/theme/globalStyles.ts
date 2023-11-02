@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import MantouSans from 'src/assets/font/MantouSans-Regular.ttf';
 import { device } from './breakpoints';
 
 const GlobalStyle = createGlobalStyle`
@@ -115,7 +116,7 @@ li {
 
 @font-face {
   font-family: "Mantou Sans";
-  src: local("Mantou Sans"), url("/font/MantouSans-Regular.ttf") format("truetype");
+  src: local("Mantou Sans"), url(${MantouSans}) format("truetype");
   font-weight: normal;
 }
 `;

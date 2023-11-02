@@ -18,6 +18,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   background: var(--bg-primary);
+  scroll-behavior: smooth;
 `;
 
 const Content = styled.main`

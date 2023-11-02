@@ -2,8 +2,10 @@ import styled from 'styled-components';
 
 import SectionTitle from 'src/components/SectionTitle';
 import advocate from 'src/assets/images/advocate.png';
+import { AnchorId } from 'src/config';
 
 const Section = styled.section`
+  scroll-margin-top: 80px;
   display: flex;
   justify-content: center;
   background: var(--bg-secondary);
@@ -37,10 +39,18 @@ const Paper = styled.div`
   }
 `;
 
-const Img = styled.img`
-  object-fit: cover;
+const Img = styled.div`
   width: 100%;
   height: 100%;
+  background: url(${advocate}) no-repeat center center;
+  background-size: cover;
+  max-height: 648px;
+  @media ${props => props.theme.device.desktop} {
+    min-height: 696px;
+  }
+  @media ${props => props.theme.device.tablet} {
+    min-height: 343px;
+  }
 `;
 
 const SubTitle = styled.div`
@@ -64,7 +74,7 @@ const Description = styled.div`
 
 const Advocate = () => {
   return (
-    <Section>
+    <Section id={AnchorId.advocate}>
       <CenterBox>
         <Paper>
           <SectionTitle
@@ -78,7 +88,7 @@ const Advocate = () => {
             畢竟，民眾的身心健康與工作熱情是推動經濟的核心動力。透過完善的貓咪福利政策，為台灣的 GDP 經濟帶來巨大效益。 因此，我期望能在立法院內推進這些政策，確保每一隻貓咪都能得到他們應有的照顧，同時也為台灣的經濟發展助一臂之力。讓我們一同護航台灣的幸福經濟，從照顧每一隻貓咪開始。
           </Description>
         </Paper>
-        <Img src={advocate} alt="advocate" />
+        <Img />
       </CenterBox>
     </Section>
   );

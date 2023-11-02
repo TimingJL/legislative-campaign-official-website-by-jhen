@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Button from 'src/components/Button';
 import ArrowForward from 'src/assets/icons/arrow-forward.svg';
 import Donate from 'src/assets/images/donate.png';
+import { AnchorId } from 'src/config';
 
 const Section = styled.section`
   background: #FFF;
@@ -36,6 +37,7 @@ const CardsGroup = styled.div`
 `;
 
 const CommonBox = styled.div`
+  scroll-margin-top: 120px;
   border-radius: var(--spacer-32, 32px);
   padding: var(--spacer-96, 96px);
   color: var(--default-white, #FFF);
@@ -83,7 +85,7 @@ const Actions = () => {
     <Section>
       <CenterBox>
         <CardsGroup>
-          <DonateBox>
+          <DonateBox id={AnchorId.donate}>
             <div>
               <div className="action__title">小額支持喵喵</div>
               <div className="action__description">您的小筆捐款，是每隻毛孩未來的大大動力！</div>
@@ -97,7 +99,7 @@ const Actions = () => {
               <img src={Donate} className="donate__img" />
             </div>
           </DonateBox>
-          <ServiceBox>
+          <ServiceBox id={AnchorId.service}>
             <div>
               <div className="action__title">民眾服務信箱</div>
               <div className="action__description">親愛的鄉親，每一位市民的意見都是我們社區前進的原動力</div>

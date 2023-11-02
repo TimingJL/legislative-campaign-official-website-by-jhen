@@ -4,6 +4,7 @@ import SectionTitle from 'src/components/SectionTitle';
 import education from 'src/assets/images/education.png';
 import entertainment from 'src/assets/images/entertainment.png';
 import medical from 'src/assets/images/medical.png';
+import { AnchorId } from 'src/config';
 
 const issues = [
   {
@@ -27,6 +28,7 @@ const issues = [
 ];
 
 const Section = styled.section`
+  scroll-margin-top: 80px;
   padding: 104px 36px;
   @media ${props => props.theme.device.tablet} {
     padding: 64px 36px;
@@ -59,7 +61,7 @@ const CenterBox = styled.div`
 
 const PolicyIssues = () => {
   return (
-    <Section>
+    <Section id={AnchorId.policyIssues}>
       <SectionTitle
         tag="POLICY ISSUES"
         title="政策議題"

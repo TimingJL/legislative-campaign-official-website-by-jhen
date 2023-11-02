@@ -1,9 +1,10 @@
 import styled from 'styled-components';
-import SectionTitle from 'src/components/SectionTitle';
 
+import SectionTitle from 'src/components/SectionTitle';
 import catFirst from 'src/assets/images/event-cat-first.png';
 import model from 'src/assets/images/event-model.png';
 import street from 'src/assets/images/event-street.png';
+import { AnchorId } from 'src/config';
 
 const events = [
   {
@@ -30,6 +31,7 @@ const events = [
 ];
 
 const Section = styled.section`
+  scroll-margin-top: 20px;
   background: #FFF;
   padding: 104px 36px;
   display: flex;
@@ -128,7 +130,7 @@ const LatestEvents = () => {
   const pinnedEvent = events.find(event => event.pin) || events[0];
   const unpinnedEvent = events.filter(event => !event.pin);
   return (
-    <Section>
+    <Section id={AnchorId.latestEvents}>
       <SectionTitle
         tag="LATEST EVENTS"
         title="最新活動"

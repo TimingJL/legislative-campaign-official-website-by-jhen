@@ -3,6 +3,7 @@ import logo from 'src/assets/images/logo.svg';
 import facebookIcon from 'src/assets/icons/facebook.svg';
 import instagramIcon from 'src/assets/icons/instagram.svg';
 import youtubeIcon from 'src/assets/icons/youtube.svg';
+import { AnchorId } from 'src/config';
 
 const Container = styled.nav`
   position: sticky;
@@ -93,11 +94,11 @@ const NavigationBar = () => {
           <div className="logo__title">喵立翰 Miao Li-Han</div>
         </Logo>
         <Menu>
-          <li>候選人主張</li>
-          <li>最新活動</li>
-          <li>政策議題</li>
-          <li>小額捐款</li>
-          <li>民眾服務信箱</li>
+          <li><a href={`#${AnchorId.advocate}`}>候選人主張</a></li>
+          <li><a href={`#${AnchorId.latestEvents}`}>最新活動</a></li>
+          <li><a href={`#${AnchorId.policyIssues}`}>政策議題</a></li>
+          <li><a href={`#${AnchorId.donate}`}>小額捐款</a></li>
+          <li><a href={`#${AnchorId.service}`}>民眾服務信箱</a></li>
         </Menu>
         <SocialMedia>
           <img alt="facebook" className="icon-facebook" src={facebookIcon} />

@@ -114,6 +114,12 @@ li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
 @font-face {
   font-family: "Mantou Sans";
   src: local("Mantou Sans"), url(${MantouSans}) format("truetype");

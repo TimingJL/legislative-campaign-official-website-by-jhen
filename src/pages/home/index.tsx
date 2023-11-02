@@ -6,6 +6,7 @@ import Hero from 'src/pages/home/hero';
 import Advocate from 'src/pages/home/advocate';
 import LatestEvents from 'src/pages/home/latestEvents';
 import PolicyIssues from 'src/pages/home/policyIssues';
+import Actions from 'src/pages/home/actions';
 import Footer from 'src/pages/home/footer';
 
 const Container = styled.div`
@@ -29,6 +30,7 @@ const Home = () => {
         <Advocate />
         <LatestEvents />
         <PolicyIssues />
+        <Actions />
       </Content>
       <Footer />
       <BottomNavigationBar />

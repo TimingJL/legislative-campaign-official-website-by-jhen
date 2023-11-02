@@ -154,7 +154,7 @@ li {
 
 @font-face {
   font-family: "Mantou Sans";
-  src: local("Mantou Sans"), url("src/font/MantouSans-Regular.ttf") format("truetype");
+  src: local("Mantou Sans"), url("/font/MantouSans-Regular.ttf") format("truetype");
   font-weight: normal;
 }
 `,Um={device:gt},Bm="/legislative-campaign-official-website-by-jhen/assets/logo-9c32f846.svg",of="/legislative-campaign-official-website-by-jhen/assets/facebook-d813e5b7.svg",sf="/legislative-campaign-official-website-by-jhen/assets/instagram-b6b9c5da.svg",uf="/legislative-campaign-official-website-by-jhen/assets/youtube-2f360bd4.svg",Hm=P.nav`
@@ -771,7 +771,8 @@ li {
   cursor: pointer;
 `,g0=()=>h.jsxs(d0,{children:[h.jsxs(_a,{children:[h.jsxs(h0,{children:[h.jsx(f0,{children:"3"}),h.jsx(p0,{children:"喵立翰 Miao Li-Han"})]}),h.jsxs(m0,{children:[h.jsx(Kl,{children:h.jsx("img",{alt:"facebook",className:"icon-facebook",src:of})}),h.jsx(Kl,{children:h.jsx("img",{alt:"instagram",className:"icon-instagram",src:sf})}),h.jsx(Kl,{children:h.jsx("img",{alt:"youtube",className:"icon-youtube",src:uf})})]}),h.jsx("div",{children:"© 2023 喵立翰 Miao Li-Han 版權所有"})]}),h.jsxs(_a,{children:[h.jsx("h4",{children:"競選總部"}),h.jsxs("div",{children:[h.jsx("div",{children:"辦公室地址：喵星區，毛茸茸大道88號，喵喵大樓3樓"}),h.jsx("div",{children:"電話：(02) 888-5678"}),h.jsx("div",{children:"電子郵件地址：meowoffice@linmeow.tw"})]})]})]}),v0=P.div`
   height: 100vh;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   background: var(--bg-primary);

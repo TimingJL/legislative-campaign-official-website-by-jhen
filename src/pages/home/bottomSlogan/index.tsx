@@ -21,6 +21,7 @@ const CenterBox = styled.div`
 const Slogan = styled(GradientText)`
   font-size: 64px;
   letter-spacing: 2px;
+  line-height: 105%; /* 54.6px */
   @media
     ${props => props.theme.device.tablet},
     ${props => props.theme.device.mobile},

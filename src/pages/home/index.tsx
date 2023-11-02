@@ -7,6 +7,7 @@ import Advocate from 'src/pages/home/advocate';
 import LatestEvents from 'src/pages/home/latestEvents';
 import PolicyIssues from 'src/pages/home/policyIssues';
 import Actions from 'src/pages/home/actions';
+import ButtonSlogan from 'src/pages/home/bottomSlogan';
 import Footer from 'src/pages/home/footer';
 
 const Container = styled.div`
@@ -31,6 +32,7 @@ const Home = () => {
         <LatestEvents />
         <PolicyIssues />
         <Actions />
+        <ButtonSlogan />
       </Content>
       <Footer />
       <BottomNavigationBar />

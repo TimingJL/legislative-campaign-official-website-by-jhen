@@ -270,6 +270,7 @@ li {
 `,og=P(qs)`
   font-size: 64px;
   letter-spacing: 2px;
+  line-height: 105%; /* 54.6px */
   @media ${e=>e.theme.device.tablet} {
     font-size: 52px;
     white-space: pre-line;
@@ -676,6 +677,7 @@ li {
 `,s0=P(qs)`
   font-size: 64px;
   letter-spacing: 2px;
+  line-height: 105%; /* 54.6px */
   @media
     ${e=>e.theme.device.tablet},
     ${e=>e.theme.device.mobile},

@@ -9,6 +9,7 @@ const Container = styled.nav`
   top: 0px;
   padding: 16px 24px;
   background: #fff;
+  z-index: 10;
   @media ${props => props.theme.device.desktop} {
     background: var(--bg-primary);
   }

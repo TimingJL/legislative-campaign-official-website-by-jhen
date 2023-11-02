@@ -77,7 +77,7 @@ h4 {
   font-style: normal;
   line-height: 1.5; /* 36px */
   @media ${device.mobile} {
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 

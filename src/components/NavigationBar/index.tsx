@@ -9,11 +9,7 @@ const Container = styled.nav`
   position: sticky;
   top: 0px;
   padding: 16px 24px;
-  background: #fff;
   z-index: 10;
-  @media ${props => props.theme.device.desktop} {
-    background: var(--bg-primary);
-  }
   @media ${props => props.theme.device.tablet} {
     padding: 0px;
   }

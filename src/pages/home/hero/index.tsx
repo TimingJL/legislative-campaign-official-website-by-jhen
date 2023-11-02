@@ -2,15 +2,17 @@ import styled from 'styled-components';
 
 import { GradientText } from 'src/components/styled';
 import miaoLiHan from 'src/assets/images/miao-li-han.png';
+import facebookIcon from 'src/assets/icons/facebook.svg';
+import instagramIcon from 'src/assets/icons/instagram.svg';
+import youtubeIcon from 'src/assets/icons/youtube.svg';
 
-const Section = styled.section`
-
-`;
+const Section = styled.section``;
 
 const CenterBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 `;
 
 const Slogan = styled(GradientText)`
@@ -63,6 +65,7 @@ const CandidateName = styled.h3`
   text-align: center;
   white-space: nowrap;
   font-size: 40px;
+  white-space: nowrap;
   @media ${props => props.theme.device.tablet} {
     font-size: 28px;
   }
@@ -85,6 +88,7 @@ const Tag = styled.h3`
   background: var(--text-primary, #334155);
   padding: var(--spacer-12, 12px) var(--spacer-16, 16px);
   width: fit-content;
+  white-space: nowrap;
 `;
 
 const Stack = styled.div`
@@ -94,6 +98,7 @@ const Stack = styled.div`
   gap: 32px;
   @media ${props => props.theme.device.tablet} {
     flex-direction: column;
+    gap: 4px;
   }
 `;
 
@@ -104,6 +109,26 @@ const MiaoLiHan = styled.img`
   }
   @media ${props => props.theme.device.mobile} {
     width: 327px;
+  }
+`;
+
+const SocialMedia = styled.div`
+  gap: 16px;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FFF;
+  margin: 12px;
+  padding: var(--spacer-8, 8px) var(--spacer-40, 40px);
+  border-radius: var(--spacer-12, 12px);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.10);
+  & > img {
+    cursor: pointer;
+  }
+  display: none;
+  @media ${props => props.theme.device.tablet} {
+    display: flex;
   }
 `;
 
@@ -122,6 +147,11 @@ const Hero = () => {
           </Stack>
         </Title>
         <MiaoLiHan alt="喵立翰 Miao Li-Han" src={miaoLiHan} />
+        <SocialMedia>
+          <img alt="facebook" className="icon-facebook" src={facebookIcon} />
+          <img alt="instagram" className="icon-instagram" src={instagramIcon} />
+          <img alt="youtube" className="icon-youtube" src={youtubeIcon} />
+        </SocialMedia>
       </CenterBox>
     </Section>
   );

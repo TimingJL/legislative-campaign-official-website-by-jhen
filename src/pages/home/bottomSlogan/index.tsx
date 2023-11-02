@@ -22,10 +22,7 @@ const Slogan = styled(GradientText)`
   font-size: 64px;
   letter-spacing: 2px;
   line-height: 105%; /* 54.6px */
-  @media
-    ${props => props.theme.device.tablet},
-    ${props => props.theme.device.mobile},
-  {
+  @media ${props => props.theme.device.tablet} {
     font-size: 52px;
     white-space: pre-line;
     text-align: center;
@@ -52,10 +49,7 @@ const CandidateName = styled.h3`
   text-align: center;
   white-space: nowrap;
   font-size: 40px;
-  @media
-    ${props => props.theme.device.tablet},
-    ${props => props.theme.device.mobile},
-  {
+  @media ${props => props.theme.device.tablet} {
     font-size: 24px;
   }
 `;

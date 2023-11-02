@@ -9,6 +9,11 @@ const marqee = keyframes`
   }
 `;
 
+const Section = styled.section`
+  width: 100vw;
+  overflow: hidden;
+`;
+
 const Container = styled.div`
   background: var(--primary-color, #DA7D4A);
   padding: 10px;
@@ -41,18 +46,20 @@ const Container = styled.div`
 
 const Marquee = () => {
   return (
-		<Container>
-      <ul className="marquee__content">
-        <li>為喵星人，護台灣！</li>
-        <li>從喵的眼中，看見台灣</li>
-        <li>喵的未來，人的希望</li>
-      </ul>
-      <ul className="marquee__content" aria-hidden="true">
-        <li>為喵星人，護台灣！</li>
-        <li>從喵的眼中，看見台灣</li>
-        <li>喵的未來，人的希望</li>
-      </ul>
-		</Container>
+    <Section>
+      <Container>
+        <ul className="marquee__content">
+          <li>為喵星人，護台灣！</li>
+          <li>從喵的眼中，看見台灣</li>
+          <li>喵的未來，人的希望</li>
+        </ul>
+        <ul className="marquee__content" aria-hidden="true">
+          <li>為喵星人，護台灣！</li>
+          <li>從喵的眼中，看見台灣</li>
+          <li>喵的未來，人的希望</li>
+        </ul>
+      </Container>
+    </Section>
   );
 };
 

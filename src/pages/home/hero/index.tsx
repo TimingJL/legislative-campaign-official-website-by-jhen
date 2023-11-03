@@ -5,6 +5,7 @@ import miaoLiHan from 'src/assets/images/miao-li-han.png';
 import facebookIcon from 'src/assets/icons/facebook.svg';
 import instagramIcon from 'src/assets/icons/instagram.svg';
 import youtubeIcon from 'src/assets/icons/youtube.svg';
+import { aosProps } from 'src/utils/aos';
 
 const Section = styled.section``;
 
@@ -140,16 +141,16 @@ const Hero = () => {
     <Section>
       <CenterBox>
         <Title>
-          <Slogan>{`台灣的明天\n喵先鋪路`}</Slogan>
+          <Slogan {...aosProps(0)}>{`台灣的明天\n喵先鋪路`}</Slogan>
           <Stack>
-            <Tag>2024 立委參選人</Tag>
-            <NameContainer>
+            <Tag {...aosProps(1)}>2024 立委參選人</Tag>
+            <NameContainer {...aosProps(2)}>
               <Number>3</Number>
               <CandidateName>喵立翰 Miao Li-Han</CandidateName>
             </NameContainer>
           </Stack>
         </Title>
-        <MiaoLiHan alt="喵立翰 Miao Li-Han" src={miaoLiHan} />
+        <MiaoLiHan alt="喵立翰 Miao Li-Han" src={miaoLiHan} {...aosProps(3)} />
         <SocialMedia>
           <img alt="facebook" className="icon-facebook" src={facebookIcon} />
           <img alt="instagram" className="icon-instagram" src={instagramIcon} />

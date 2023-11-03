@@ -18,14 +18,23 @@ const ColorBlock = styled(CommonColorBlock)`
   background: #E3F8FF;
   display: flex;
   flex-direction: column;
+  position: relative;
+  .img__container {
+    height: 480px;
+  }
   img {
-    transform: translate(60px, 60px);
+    width: 731px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
   }
   @media ${props => props.theme.device.tablet} {
     flex-direction: row;
     justify-content: space-between;
+    .img__container {
+      height: 126px;
+    }
     img {
-      transform: translate(24px, 24px);
       width: 177px;
     }
   }
@@ -58,7 +67,9 @@ const Service = () => {
           <Grid>
             <ColorBlock>
               <ActionTitle>{'分享您的想法\n一同為我們的未來打造更美好！'}</ActionTitle>
-              <img src={ServiceSrc} width="100%" />
+              <div className="img__container">
+                <img src={ServiceSrc} width="100%" />
+              </div>
             </ColorBlock>
             <div>ServiceSrc</div>
           </Grid>

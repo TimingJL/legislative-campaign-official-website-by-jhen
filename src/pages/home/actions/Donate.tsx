@@ -10,6 +10,7 @@ import { AnchorId } from 'src/config';
 import Modal from 'src/components/Modal';
 
 import { CommonBox, Grid, ActionTitle, CommonColorBlock } from './styled';
+import { donatePlans } from './data';
 
 const DonateBox = styled(CommonBox)`
   background: var(--primary-color, #DA7D4A);
@@ -52,6 +53,78 @@ const Amount = styled.div`
   }
 `;
 
+const DonationPlan = styled.div`
+  font-size: 20px;
+  font-weight: 700;
+`;
+
+const PlanOptionBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  border-radius: var(--spacer-16, 16px);
+  padding: var(--spacer-24, 24px) var(--spacer-16, 16px);
+  border: 2px solid var(--gray-200, #E2E8F0);
+  cursor: pointer;
+  &:hover, &:focus {
+    border: 2px solid var(--primary, #DA7D4A);
+  }
+  .plan-option-box__title {
+    color: var(--primary, #DA7D4A);
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-right: 8px;
+  }
+  .plan-option-box__info {
+    display: flex;
+    align-items: center;
+  }
+  .plan-option-box__info-price {
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 8px;
+  }
+  .plan-option-box__info-headcount {
+    margin-left: 24px;
+    color: var(--slate-500, #94A3B8);
+    white-space: nowrap;
+  }
+  .plan-option-box__info-input {
+    border-radius: var(--spacer-8, 8px);
+    background: var(--slate-100, #F1F5F9);
+    padding: var(--spacer-16, 16px) 15px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center
+  }
+  .plan-option-box__info-input-box {
+    margin-left: 10px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    width: 100%;
+    background: transparent;
+  }
+  @media ${props => props.theme.device.desktop} {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    .plan-option-box__info {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+`;
+
+const CustomPlanOptionBox = styled(PlanOptionBox)`
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+`;
+
 const Donate = () => {
   const [open ,setOpen] = React.useState(false);
   return (
@@ -92,7 +165,41 @@ const Donate = () => {
                 <img src={DonateSrc} width="100%" />
               </div>
             </ColorBlock>
-            <div>donate</div>
+            <Stack spacing="16px">
+              <DonationPlan>捐款方案</DonationPlan>
+              <Stack spacing="16px">
+                {donatePlans.map((plan) => (
+                  <PlanOptionBox key={plan.id}>
+                    <div className="plan-option-box__title">{plan.title}</div>
+                    <div className="plan-option-box__info">
+                      <Stack direction="row" alignItems="center">
+                        NT$<span className="plan-option-box__info-price">{plan.price}</span>
+                      </Stack>
+                      <div className="plan-option-box__info-headcount">{`已有 ${plan.headcount.toLocaleString()} 人贊助`}</div>
+                    </div>
+                  </PlanOptionBox>
+                ))}
+                <CustomPlanOptionBox>
+                  <div className="plan-option-box__title">自訂贊助金額</div>
+                  <div className="plan-option-box__info-input">
+                    <div>NT$</div>
+                    <input type="number" className="plan-option-box__info-input-box" />
+                  </div>
+                </CustomPlanOptionBox>
+              </Stack>
+              <Button
+                style={{
+                  background: "var(--primary, #DA7D4A)",
+                  width: '100%',
+                  height: '67px',
+                  fontSize: '16px',
+                  color: '#FFF',
+                  fontWeight: "600",
+                }}
+              >
+                前往捐款
+              </Button>
+            </Stack>
           </Grid>
         )}
       />

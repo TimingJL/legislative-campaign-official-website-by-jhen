@@ -16,7 +16,7 @@ const Container = styled.nav`
 `;
 
 const Box = styled.div`
-  background: #fff;
+  background: rgba(255, 255, 255, 0.90);
   display: flex;
   padding: var(--spacer-12, 12px) var(--spacer-24, 24px);
   justify-content: space-between;

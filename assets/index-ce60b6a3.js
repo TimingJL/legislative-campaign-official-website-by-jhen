@@ -896,6 +896,7 @@ section {
   height: 51px;
   font-weight: 600;
   font-size: 16px;
+  color: var(--text-primary, #334155);
 `,z0=e=>{const{message:t,onClose:n}=e;return c.jsx(QE,{children:c.jsxs(be,{alignItems:"center",spacing:"32px",children:[c.jsx(YE,{children:t}),c.jsx("img",{src:GE,alt:"success",width:"187px"}),c.jsx(XE,{onClick:n,children:"關閉"})]})})},A0=$.div`
   scroll-margin-top: 120px;
   border-radius: var(--spacer-32, 32px);
@@ -949,7 +950,7 @@ section {
   border-radius: var(--spacer-24, 24px);
   padding: 60px;
   @media ${e=>e.theme.device.tablet} {
-    padding: 24px;
+    padding: 24px 16px;
   }
 `,D0=$(ao)`
   background: var(--primary, #DA7D4A);

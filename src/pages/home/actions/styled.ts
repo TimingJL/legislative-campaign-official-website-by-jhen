@@ -35,3 +35,30 @@ export const CommonBox = styled.div`
     }
   }
 `;
+
+export const Grid = styled.div`
+  color: var(--text-primary, #334155);
+  display: grid;
+  grid-template-columns: 731px 1fr;
+  gap: 24px;
+  @media ${props => props.theme.device.desktop} {
+    grid-template-columns: repeat(1, 1fr);
+  }
+`;
+
+export const ActionTitle = styled.div`
+  font-size: 40px;
+  font-weight: 700;
+  white-space: pre-line;
+  @media ${props => props.theme.device.tablet} {
+    font-size: 16px;
+  }
+`;
+
+export const CommonColorBlock = styled.div`
+  border-radius: var(--spacer-24, 24px);
+  padding: 60px;
+  @media ${props => props.theme.device.tablet} {
+    padding: 24px;
+  }
+`;

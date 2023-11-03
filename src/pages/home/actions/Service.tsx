@@ -3,14 +3,32 @@ import styled from 'styled-components';
 
 import Button from 'src/components/Button';
 import ArrowForward from 'src/assets/icons/arrow-forward.svg';
+import ServiceSrc from 'src/assets/images/service.png';
 import DonateSrc from 'src/assets/images/donate.png';
 import { AnchorId } from 'src/config';
 import Modal from 'src/components/Modal';
 
-import { CommonBox } from './styled';
+import { CommonBox, Grid, ActionTitle, CommonColorBlock } from './styled';
 
 const ServiceBox = styled(CommonBox)`
   background: var(--text-primary, #334155);
+`;
+
+const ColorBlock = styled(CommonColorBlock)`
+  background: #E3F8FF;
+  display: flex;
+  flex-direction: column;
+  img {
+    transform: translate(60px, 60px);
+  }
+  @media ${props => props.theme.device.tablet} {
+    flex-direction: row;
+    justify-content: space-between;
+    img {
+      transform: translate(24px, 24px);
+      width: 177px;
+    }
+  }
 `;
 
 const Service = () => {
@@ -37,9 +55,13 @@ const Service = () => {
         title="民眾服務信箱"
         onClose={() => setOpen(false)}
         content={(
-          <div>
-            Service
-          </div>
+          <Grid>
+            <ColorBlock>
+              <ActionTitle>{'分享您的想法\n一同為我們的未來打造更美好！'}</ActionTitle>
+              <img src={ServiceSrc} width="100%" />
+            </ColorBlock>
+            <div>ServiceSrc</div>
+          </Grid>
         )}
       />
     </>

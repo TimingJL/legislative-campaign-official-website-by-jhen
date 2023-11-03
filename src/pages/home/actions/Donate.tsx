@@ -1,16 +1,55 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
+import Stack from '@mui/material/Stack';
+
 import Button from 'src/components/Button';
 import ArrowForward from 'src/assets/icons/arrow-forward.svg';
 import DonateSrc from 'src/assets/images/donate.png';
 import { AnchorId } from 'src/config';
 import Modal from 'src/components/Modal';
 
-import { CommonBox } from './styled';
+import { CommonBox, Grid, ActionTitle, CommonColorBlock } from './styled';
 
 const DonateBox = styled(CommonBox)`
   background: var(--primary-color, #DA7D4A);
+`;
+
+const Title = styled(ActionTitle)`
+  color: var(--primary-color, #DA7D4A);
+`;
+
+const ColorBlock = styled(CommonColorBlock)`
+  background: var(--bg-2, #F7ECE1);
+  display: flex;
+  flex-direction: column;
+  .img__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 56px;
+  }
+  img {
+    max-width: 336px;
+  }
+  @media ${props => props.theme.device.tablet} {
+    flex-direction: row;
+    justify-content: space-between;
+    img {
+      width: 95px;
+    }
+    .img__container {
+      margin: 0px;
+    }
+  }
+`;
+
+const Amount = styled.div`
+  font-size: 32px;
+  font-weight: 700;
+  @media ${props => props.theme.device.tablet} {
+    font-size: 20px;
+  }
 `;
 
 const Donate = () => {
@@ -37,9 +76,24 @@ const Donate = () => {
         title="小額捐款"
         onClose={() => setOpen(false)}
         content={(
-          <div>
-            Donate
-          </div>
+          <Grid>
+            <ColorBlock>
+              <div>
+                <Title>
+                  {'您的小筆捐款\n'}
+                  <span style={{ whiteSpace: 'nowrap' }}>是每隻毛孩未來的大大動力！</span>
+                </Title>
+                <Stack sx={{ mt: '16px' }}>
+                  <div>目前小額贊助總金額</div>
+                  <Amount>987,655,873</Amount>
+                </Stack>
+              </div>
+              <div className="img__container">
+                <img src={DonateSrc} width="100%" />
+              </div>
+            </ColorBlock>
+            <div>donate</div>
+          </Grid>
         )}
       />
     </>

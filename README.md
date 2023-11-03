@@ -1,4 +1,7 @@
-# 立委競選官網 by jhen
+# 立委競選官網
+
+- Design: jhen
+- Implement: Taiming
 
 ![](public/images/cover.png)
 

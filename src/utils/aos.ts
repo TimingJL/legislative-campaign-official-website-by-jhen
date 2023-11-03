@@ -3,10 +3,15 @@ export const delay = (order: number) => {
   return order * base;
 };
 
-export  const aosProps = (order: number) => {
+export  const aosProps = ({
+  order, animation = 'fade-up'
+}: {
+  order: number;
+  animation?: string;
+}) => {
   return {
-    'data-aos': 'fade-down',
+    'data-aos': animation,
     'data-aos-delay': delay(order),
-    'data-aos-duration': "1500"
+    'data-aos-duration': "1500",
   };
 };

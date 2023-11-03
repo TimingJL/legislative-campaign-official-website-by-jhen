@@ -36,6 +36,10 @@ const GlobalStyle = createGlobalStyle`
   -webkit-text-size-adjust: 100%;
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   line-height: 1;
@@ -101,6 +105,7 @@ body {
   font-size: 16px;
   padding: 0px;
   margin: 0px;
+  overflow-x: hidden;
   @media ${device.mobile} {
     font-size: 16px;
   }

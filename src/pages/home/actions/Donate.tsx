@@ -9,6 +9,7 @@ import DonateSrc from 'src/assets/images/donate.png';
 import { AnchorId } from 'src/config';
 import Modal from 'src/components/Modal';
 import Input from 'src/components/Input';
+import { aosProps } from 'src/utils/aos';
 
 import SuccessTab from './SuccessTab';
 import { CommonBox, Grid, ActionTitle, CommonColorBlock, SubmitButton } from './styled';
@@ -145,7 +146,7 @@ const Donate = () => {
   };
   return (
     <>
-      <DonateBox id={AnchorId.donate}>
+      <DonateBox id={AnchorId.donate} {...aosProps({ order: 0, animation: 'fade-right' })}>
         <div>
           <div className="action__title">小額支持喵喵</div>
           <div className="action__description">您的小筆捐款，是每隻毛孩未來的大大動力！</div>

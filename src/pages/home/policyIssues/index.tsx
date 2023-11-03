@@ -10,6 +10,7 @@ import facebookIcon from 'src/assets/icons/facebook.svg';
 import instagramIcon from 'src/assets/icons/instagram.svg';
 import lineIcon from 'src/assets/icons/line.svg';
 import twitterIcon from 'src/assets/icons/twitter.svg';
+import { aosProps } from 'src/utils/aos';
 
 import { issues } from './data';
 
@@ -123,17 +124,24 @@ const PolicyIssues = () => {
     items: [],
   };
   const unselectedIssues = issues.filter(issue => issue.id !== selectedIssueId);
+  const animationList = ['fade-up-right', 'fade-up', 'fade-up-left'];
   return (
     <>
       <Section id={AnchorId.policyIssues}>
         <SectionTitle
           tag="POLICY ISSUES"
           title="政策議題"
+          {...aosProps({ order: 0 })}
         />
         <CenterBox>
           <CardsGroup>
-            {issues.map((issue) => (
-              <Card key={issue.id} onClick={() => setSelectedIssueId(issue.id)} {...issue} />
+            {issues.map((issue, index) => (
+              <Card
+                key={issue.id}
+                onClick={() => setSelectedIssueId(issue.id)}
+                {...issue}
+                {...aosProps({ order: 1, animation: animationList[index] })}
+              />
             ))}
           </CardsGroup>
         </CenterBox>

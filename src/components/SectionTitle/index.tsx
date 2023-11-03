@@ -28,9 +28,9 @@ interface IProps {
   title: string;
 }
 
-const SectionTitle = ({ tag, title }: IProps) => {
+const SectionTitle = ({ tag, title, ...otherProps }: IProps) => {
   return (
-    <Container>
+    <Container {...otherProps}>
       <Tag>{tag}</Tag>
       <StyledGradientText>{title}</StyledGradientText>
     </Container>

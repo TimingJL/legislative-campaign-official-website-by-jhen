@@ -10,6 +10,7 @@ import facebookIcon from 'src/assets/icons/facebook.svg';
 import instagramIcon from 'src/assets/icons/instagram.svg';
 import lineIcon from 'src/assets/icons/line.svg';
 import twitterIcon from 'src/assets/icons/twitter.svg';
+import { aosProps } from 'src/utils/aos';
 
 import { events } from './data';
 
@@ -172,9 +173,10 @@ const LatestEvents = () => {
         <SectionTitle
           tag="LATEST EVENTS"
           title="最新活動"
+          {...aosProps({ order: 0 })}
         />
         <CenterBox>
-          <HeadlineCard onClick={() => setSelectedEventId(pinnedEvent.id)}>
+          <HeadlineCard onClick={() => setSelectedEventId(pinnedEvent.id)} {...aosProps({ order: 1 })}>
             <HeadlineImg src={pinnedEvent.imgSrc} />
             <div className="card__content">
               <CardDate className="card__date">{pinnedEvent.date}</CardDate>
@@ -183,9 +185,9 @@ const LatestEvents = () => {
             </div>
           </HeadlineCard>
           <Events>
-            {[...unpinnedEvent, pinnedEvent].map(event => {
+            {[...unpinnedEvent, pinnedEvent].map((event, index) => {
               return (
-                <EventCard key={event.id} onClick={() => setSelectedEventId(event.id)}>
+                <EventCard key={event.id} onClick={() => setSelectedEventId(event.id)} {...aosProps({ order: 2 + index })}>
                   <Img src={event.imgSrc}/>
                   <div className="card__content">
                     <CardDate className="card__date">{event.date}</CardDate>

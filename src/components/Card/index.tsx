@@ -32,9 +32,9 @@ interface IProps {
 }
 
 const Card = (props: IProps) => {
-  const { imgSrc, title, tag, tagColor, onClick } = props;
+  const { imgSrc, title, tag, tagColor, onClick, ...otherProps } = props;
   return (
-    <Container className="card" onClick={onClick}>
+    <Container className="card" onClick={onClick} {...otherProps}>
       <div className="card__content">
         <div style={{ display: 'none', background: tagColor }}>{tag}</div>
         <h4 className="card-content__title">{title}</h4>

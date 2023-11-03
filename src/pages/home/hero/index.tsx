@@ -141,16 +141,16 @@ const Hero = () => {
     <Section>
       <CenterBox>
         <Title>
-          <Slogan {...aosProps(0)}>{`台灣的明天\n喵先鋪路`}</Slogan>
+          <Slogan {...aosProps({ order: 0 })}>{`台灣的明天\n喵先鋪路`}</Slogan>
           <Stack>
-            <Tag {...aosProps(1)}>2024 立委參選人</Tag>
-            <NameContainer {...aosProps(2)}>
+            <Tag {...aosProps({ order: 1 })}>2024 立委參選人</Tag>
+            <NameContainer {...aosProps({ order: 2 })}>
               <Number>3</Number>
               <CandidateName>喵立翰 Miao Li-Han</CandidateName>
             </NameContainer>
           </Stack>
         </Title>
-        <MiaoLiHan alt="喵立翰 Miao Li-Han" src={miaoLiHan} {...aosProps(3)} />
+        <MiaoLiHan alt="喵立翰 Miao Li-Han" src={miaoLiHan} {...aosProps({ order: 3 })} />
         <SocialMedia>
           <img alt="facebook" className="icon-facebook" src={facebookIcon} />
           <img alt="instagram" className="icon-instagram" src={instagramIcon} />

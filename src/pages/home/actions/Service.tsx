@@ -11,6 +11,7 @@ import ServiceSrc from 'src/assets/images/service.png';
 import DonateSrc from 'src/assets/images/donate.png';
 import { AnchorId } from 'src/config';
 import Modal from 'src/components/Modal';
+import { aosProps } from 'src/utils/aos';
 
 import SuccessTab from './SuccessTab';
 import { CommonBox, Grid, ActionTitle, CommonColorBlock, SubmitButton } from './styled';
@@ -67,7 +68,7 @@ const Service = () => {
   };
   return (
     <>
-      <ServiceBox id={AnchorId.service}>
+      <ServiceBox id={AnchorId.service} {...aosProps({ order: 0, animation: 'fade-left' })}>
         <div>
           <div className="action__title">民眾服務信箱</div>
           <div className="action__description">親愛的鄉親，每一位市民的意見都是我們社區前進的原動力</div>

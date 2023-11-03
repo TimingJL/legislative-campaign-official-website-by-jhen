@@ -1,14 +1,19 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
+import Stack from '@mui/material/Stack';
+
 import Button from 'src/components/Button';
+import Input from 'src/components/Input';
+import Textarea from 'src/components/Textarea';
 import ArrowForward from 'src/assets/icons/arrow-forward.svg';
 import ServiceSrc from 'src/assets/images/service.png';
 import DonateSrc from 'src/assets/images/donate.png';
 import { AnchorId } from 'src/config';
 import Modal from 'src/components/Modal';
 
-import { CommonBox, Grid, ActionTitle, CommonColorBlock } from './styled';
+import SuccessTab from './SuccessTab';
+import { CommonBox, Grid, ActionTitle, CommonColorBlock, SubmitButton } from './styled';
 
 const ServiceBox = styled(CommonBox)`
   background: var(--text-primary, #334155);
@@ -40,8 +45,26 @@ const ColorBlock = styled(CommonColorBlock)`
   }
 `;
 
+const InputLabel = styled.label`
+  font-size: 20px;
+  font-weight: 700;
+`;
+
 const Service = () => {
   const [open ,setOpen] = React.useState(false);
+  const [status, setStatus] = React.useState('idle');
+
+  const handleOnClose = () => {
+    setOpen(false);
+    setStatus('idle');
+  };
+
+  const handleOnSubmit = () => {
+    setStatus('loading');
+    setTimeout(() => {
+      setStatus('success');
+    }, 500);
+  };
   return (
     <>
       <ServiceBox id={AnchorId.service}>
@@ -71,7 +94,43 @@ const Service = () => {
                 <img src={ServiceSrc} width="100%" />
               </div>
             </ColorBlock>
-            <div>ServiceSrc</div>
+            {status !== 'success' && (
+              <Stack spacing="24px">
+                <Stack spacing="8px">
+                  <InputLabel>您的姓名</InputLabel>
+                  <Input placeholder="輸入內容" />
+                </Stack>
+                <Stack spacing="8px">
+                  <InputLabel>Email</InputLabel>
+                  <Input placeholder="email" />
+                </Stack>
+                <Stack spacing="8px">
+                  <InputLabel>手機</InputLabel>
+                  <Input placeholder="手機號碼" />
+                </Stack>
+                <Stack spacing="8px">
+                  <InputLabel>您的建言</InputLabel>
+                  <Textarea
+                    rows={5}
+                    placeholder="輸入內容"
+                    style={{ height: '176px' }}
+                  />
+                </Stack>
+                <SubmitButton
+                  onClick={() => {
+                    handleOnSubmit();
+                  }}
+                >
+                  送出意見
+                </SubmitButton>
+              </Stack>
+            )}
+            {status === 'success' && (
+              <SuccessTab
+                message="感謝您的意見"
+                onClose={handleOnClose}
+              />
+            )}
           </Grid>
         )}
       />

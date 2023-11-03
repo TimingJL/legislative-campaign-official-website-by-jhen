@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Button from 'src/components/Button';
 
 export const CommonBox = styled.div`
   scroll-margin-top: 120px;
@@ -61,4 +62,13 @@ export const CommonColorBlock = styled.div`
   @media ${props => props.theme.device.tablet} {
     padding: 24px;
   }
+`;
+
+export const SubmitButton = styled(Button)`
+  background: var(--primary, #DA7D4A);
+  width: 100%;
+  height: 67px;
+  font-size: 16px;
+  color: #FFF;
+  font-weight: 600;
 `;

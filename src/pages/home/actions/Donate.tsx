@@ -8,9 +8,10 @@ import ArrowForward from 'src/assets/icons/arrow-forward.svg';
 import DonateSrc from 'src/assets/images/donate.png';
 import { AnchorId } from 'src/config';
 import Modal from 'src/components/Modal';
+import Input from 'src/components/Input';
 
 import SuccessTab from './SuccessTab';
-import { CommonBox, Grid, ActionTitle, CommonColorBlock } from './styled';
+import { CommonBox, Grid, ActionTitle, CommonColorBlock, SubmitButton } from './styled';
 import { donatePlans } from './data';
 
 const DonateBox = styled(CommonBox)`
@@ -126,15 +127,6 @@ const CustomPlanOptionBox = styled(PlanOptionBox)`
   gap: 8px;
 `;
 
-const SubmitButton = styled(Button)`
-  background: var(--primary, #DA7D4A);
-  width: 100%;
-  height: 67px;
-  font-size: 16px;
-  color: #FFF;
-  font-weight: 600;
-`;
-
 const Donate = () => {
   const [open ,setOpen] = React.useState(false);
   const [amount, setAmount] = React.useState(987655873);
@@ -150,7 +142,7 @@ const Donate = () => {
     setTimeout(() => {
       setStatus('success');
     }, 500);
-  }
+  };
   return (
     <>
       <DonateBox id={AnchorId.donate}>
@@ -206,10 +198,11 @@ const Donate = () => {
                   ))}
                   <CustomPlanOptionBox>
                     <div className="plan-option-box__title">自訂贊助金額</div>
-                    <div className="plan-option-box__info-input">
-                      <div>NT$</div>
-                      <input type="number" className="plan-option-box__info-input-box" />
-                    </div>
+                    <Input
+                      type="number"
+                      startAdornment="NT$"
+                      placeholder="輸入金額"
+                    />
                   </CustomPlanOptionBox>
                 </Stack>
                 <SubmitButton

@@ -9,6 +9,7 @@ import { AnchorId } from 'src/config';
 
 const Container = styled.nav`
   position: sticky;
+  position: -webkit-sticky;
   bottom: 0px;
   background: rgba(255, 255, 255, 0.90);
   display: none;

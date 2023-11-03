@@ -26,6 +26,7 @@ const HeaderBar = styled.div`
   font-size: 32px;
   font-weight: 700;
   position: sticky;
+  position: -webkit-sticky;
   top: 0px;
   z-index: 10;
   background: #FFF;

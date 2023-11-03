@@ -7,6 +7,7 @@ import { AnchorId } from 'src/config';
 
 const Container = styled.nav`
   position: sticky;
+  position: -webkit-sticky;
   top: 0px;
   padding: 16px 24px;
   z-index: 10;

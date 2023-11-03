@@ -89,6 +89,9 @@ const Tag = styled.h3`
   padding: var(--spacer-12, 12px) var(--spacer-16, 16px);
   width: fit-content;
   white-space: nowrap;
+  @media ${props => props.theme.device.tablet} {
+    font-size: 20px;
+  }
 `;
 
 const Stack = styled.div`

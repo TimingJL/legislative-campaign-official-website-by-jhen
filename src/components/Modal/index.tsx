@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import Dialog from '@mui/material/Dialog';
-import Stack from '@mui/material/Stack';
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -18,16 +17,24 @@ const Transition = React.forwardRef(function Transition(
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const HeaderBar = styled(Stack)`
+const HeaderBar = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   max-width: 1400px;
-  height: 87px;
   padding: 0px var(--spacer-48, 48px);
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
   @media ${props => props.theme.device.tablet} {
     font-size: 24px;
-    height: 60px;
     padding: 0px var(--spacer-16, 16px);
+  }
+`;
+
+const Title = styled.div`
+  line-height: 87px;
+  @media ${props => props.theme.device.tablet} {
+    line-height: 60px;
   }
 `;
 
@@ -82,8 +89,8 @@ const Modal = (props: IProps) => {
         },
       }}
     >
-      <HeaderBar direction="row" alignItems="center" justifyContent="space-between">
-        <div>{title}</div>
+      <HeaderBar className="dialog__header">
+        <Title>{title}</Title>
         <CancelButton onClick={onClose}>
           <img src={Cancel} alt="cancel" />
         </CancelButton>

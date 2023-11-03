@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Stack from '@mui/material/Stack';
+import CircularProgress from '@mui/material/CircularProgress';
 
 import Button from 'src/components/Button';
 import Input from 'src/components/Input';
@@ -54,6 +55,7 @@ const InputLabel = styled.label`
 const Service = () => {
   const [open ,setOpen] = React.useState(false);
   const [status, setStatus] = React.useState('idle');
+  const isLoading = status === 'loading';
 
   const handleOnClose = () => {
     setOpen(false);
@@ -64,7 +66,7 @@ const Service = () => {
     setStatus('loading');
     setTimeout(() => {
       setStatus('success');
-    }, 500);
+    }, 800);
   };
   return (
     <>
@@ -96,35 +98,38 @@ const Service = () => {
               </div>
             </ColorBlock>
             {status !== 'success' && (
-              <Stack spacing="24px">
-                <Stack spacing="8px">
-                  <InputLabel>您的姓名</InputLabel>
-                  <Input placeholder="輸入內容" />
+              <form onSubmit={handleOnSubmit}>
+                <Stack spacing="24px">
+                  <Stack spacing="8px">
+                    <InputLabel>您的姓名</InputLabel>
+                    <Input placeholder="輸入內容" required />
+                  </Stack>
+                  <Stack spacing="8px">
+                    <InputLabel>Email</InputLabel>
+                    <Input placeholder="email" type="email" required />
+                  </Stack>
+                  <Stack spacing="8px">
+                    <InputLabel>手機</InputLabel>
+                    <Input placeholder="手機號碼" required />
+                  </Stack>
+                  <Stack spacing="8px">
+                    <InputLabel>您的建言</InputLabel>
+                    <Textarea
+                      required
+                      rows={5}
+                      placeholder="輸入內容"
+                      style={{ height: '176px' }}
+                    />
+                  </Stack>
+                  <SubmitButton
+                    disabled={isLoading}
+                    type="submit"
+                  >
+                    {!isLoading && '送出意見'}
+                    {isLoading && <CircularProgress style={{ color: '#94A3B8', marginLeft: '8px' }} size={24} />}
+                  </SubmitButton>
                 </Stack>
-                <Stack spacing="8px">
-                  <InputLabel>Email</InputLabel>
-                  <Input placeholder="email" />
-                </Stack>
-                <Stack spacing="8px">
-                  <InputLabel>手機</InputLabel>
-                  <Input placeholder="手機號碼" />
-                </Stack>
-                <Stack spacing="8px">
-                  <InputLabel>您的建言</InputLabel>
-                  <Textarea
-                    rows={5}
-                    placeholder="輸入內容"
-                    style={{ height: '176px' }}
-                  />
-                </Stack>
-                <SubmitButton
-                  onClick={() => {
-                    handleOnSubmit();
-                  }}
-                >
-                  送出意見
-                </SubmitButton>
-              </Stack>
+              </form>
             )}
             {status === 'success' && (
               <SuccessTab

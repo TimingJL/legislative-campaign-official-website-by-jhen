@@ -1,3 +1,4 @@
+import * as React from 'react';
 import styled from 'styled-components';
 
 import SectionTitle from 'src/components/SectionTitle';
@@ -50,6 +51,7 @@ const Img = styled.img`
 `;
 
 const HeadlineCard = styled.div`
+  cursor: pointer;
   .card__content {
     display: flex;
     flex-direction: column;
@@ -75,6 +77,7 @@ const Events = styled.div`
 `;
 
 const EventCard = styled.div`
+  cursor: pointer;
   display: flex;
   gap: 16px;
   .card__content {
@@ -102,40 +105,50 @@ const EventCard = styled.div`
 `;
 
 const LatestEvents = () => {
+  const [selectedEvent, setSelectedEvent] = React.useState<number | null>(null);
   const pinnedEvent = events.find(event => event.pin) || events[0];
   const unpinnedEvent = events.filter(event => !event.pin);
   return (
-    <Section id={AnchorId.latestEvents}>
-      <Modal />
-      <SectionTitle
-        tag="LATEST EVENTS"
+    <>
+      <Section id={AnchorId.latestEvents}>
+        <SectionTitle
+          tag="LATEST EVENTS"
+          title="最新活動"
+        />
+        <CenterBox>
+          <HeadlineCard onClick={() => setSelectedEvent(pinnedEvent.id)}>
+            <HeadlineImg src={pinnedEvent.imgSrc} />
+            <div className="card__content">
+              <div className="card__date">{pinnedEvent.date}</div>
+              <h5 className="card__title">{pinnedEvent.title}</h5>
+              <div className="card__description">{pinnedEvent.description}</div>
+            </div>
+          </HeadlineCard>
+          <Events>
+            {[...unpinnedEvent, pinnedEvent].map(event => {
+              return (
+                <EventCard key={event.title} onClick={() => setSelectedEvent(event.id)}>
+                  <Img src={event.imgSrc}/>
+                  <div className="card__content">
+                    <div className="card__date">{event.date}</div>
+                    <h5 className="card__title">{event.title}</h5>
+                    <div className="card__description overflow-ellipsis">{event.description}</div>
+                  </div>
+                </EventCard>
+              );
+            })}
+          </Events>
+        </CenterBox>
+      </Section>
+      <Modal
         title="最新活動"
+        content={(
+          <div>Content</div>
+        )}
+        open={selectedEvent !== null}
+        onClose={() => setSelectedEvent(null)}
       />
-      <CenterBox>
-        <HeadlineCard>
-          <HeadlineImg src={pinnedEvent.imgSrc} />
-          <div className="card__content">
-            <div className="card__date">{pinnedEvent.date}</div>
-            <h5 className="card__title">{pinnedEvent.title}</h5>
-            <div className="card__description">{pinnedEvent.description}</div>
-          </div>
-        </HeadlineCard>
-        <Events>
-          {[...unpinnedEvent, pinnedEvent].map(event => {
-            return (
-              <EventCard key={event.title}>
-                <Img src={event.imgSrc}/>
-                <div className="card__content">
-                  <div className="card__date">{event.date}</div>
-                  <h5 className="card__title">{event.title}</h5>
-                  <div className="card__description overflow-ellipsis">{event.description}</div>
-                </div>
-              </EventCard>
-            );
-          })}
-        </Events>
-      </CenterBox>
-    </Section>
+    </>
   );
 };
 

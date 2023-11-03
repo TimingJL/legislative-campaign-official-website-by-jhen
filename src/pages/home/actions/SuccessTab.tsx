@@ -21,6 +21,7 @@ const CloseButton = styled(Button)`
   height: 51px;
   font-weight: 600;
   font-size: 16px;
+  color: var(--text-primary, #334155);
 `;
 
 interface IProps {

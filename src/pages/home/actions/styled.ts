@@ -60,7 +60,7 @@ export const CommonColorBlock = styled.div`
   border-radius: var(--spacer-24, 24px);
   padding: 60px;
   @media ${props => props.theme.device.tablet} {
-    padding: 24px;
+    padding: 24px 16px;
   }
 `;
 

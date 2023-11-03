@@ -113,6 +113,13 @@ const EventCard = styled.div`
 
 const IconButton = styled.img`
   cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    transform: scale(0.95);
+    transition: all 0.2s ease-in-out;
+  }
 `;
 
 const Grid = styled.div`

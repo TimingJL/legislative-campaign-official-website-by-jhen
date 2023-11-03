@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import MantouSans from 'src/assets/font/MantouSans-Regular.ttf';
+import MantouSans from 'src/assets/fonts/MantouSans-Regular.ttf';
 import { device } from './breakpoints';
 
 const GlobalStyle = createGlobalStyle`

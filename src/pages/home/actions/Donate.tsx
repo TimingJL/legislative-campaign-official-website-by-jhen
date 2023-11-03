@@ -9,6 +9,7 @@ import DonateSrc from 'src/assets/images/donate.png';
 import { AnchorId } from 'src/config';
 import Modal from 'src/components/Modal';
 
+import SuccessTab from './SuccessTab';
 import { CommonBox, Grid, ActionTitle, CommonColorBlock } from './styled';
 import { donatePlans } from './data';
 
@@ -125,8 +126,31 @@ const CustomPlanOptionBox = styled(PlanOptionBox)`
   gap: 8px;
 `;
 
+const SubmitButton = styled(Button)`
+  background: var(--primary, #DA7D4A);
+  width: 100%;
+  height: 67px;
+  font-size: 16px;
+  color: #FFF;
+  font-weight: 600;
+`;
+
 const Donate = () => {
   const [open ,setOpen] = React.useState(false);
+  const [amount, setAmount] = React.useState(987655873);
+  const [status, setStatus] = React.useState('idle');
+
+  const handleOnClose = () => {
+    setOpen(false);
+    setStatus('idle');
+  };
+
+  const handleOnSubmit = () => {
+    setStatus('loading');
+    setTimeout(() => {
+      setStatus('success');
+    }, 500);
+  }
   return (
     <>
       <DonateBox id={AnchorId.donate}>
@@ -147,7 +171,7 @@ const Donate = () => {
       <Modal
         open={open}
         title="小額捐款"
-        onClose={() => setOpen(false)}
+        onClose={handleOnClose}
         content={(
           <Grid>
             <ColorBlock>
@@ -158,48 +182,52 @@ const Donate = () => {
                 </Title>
                 <Stack sx={{ mt: '16px' }}>
                   <div>目前小額贊助總金額</div>
-                  <Amount>987,655,873</Amount>
+                  <Amount>{amount.toLocaleString()}</Amount>
                 </Stack>
               </div>
               <div className="img__container">
                 <img src={DonateSrc} width="100%" />
               </div>
             </ColorBlock>
-            <Stack spacing="16px">
-              <DonationPlan>捐款方案</DonationPlan>
+            {status !== 'success' && (
               <Stack spacing="16px">
-                {donatePlans.map((plan) => (
-                  <PlanOptionBox key={plan.id}>
-                    <div className="plan-option-box__title">{plan.title}</div>
-                    <div className="plan-option-box__info">
-                      <Stack direction="row" alignItems="center">
-                        NT$<span className="plan-option-box__info-price">{plan.price}</span>
-                      </Stack>
-                      <div className="plan-option-box__info-headcount">{`已有 ${plan.headcount.toLocaleString()} 人贊助`}</div>
+                <DonationPlan>捐款方案</DonationPlan>
+                <Stack spacing="16px">
+                  {donatePlans.map((plan) => (
+                    <PlanOptionBox key={plan.id}>
+                      <div className="plan-option-box__title">{plan.title}</div>
+                      <div className="plan-option-box__info">
+                        <Stack direction="row" alignItems="center">
+                          NT$<span className="plan-option-box__info-price">{plan.price}</span>
+                        </Stack>
+                        <div className="plan-option-box__info-headcount">{`已有 ${plan.headcount.toLocaleString()} 人贊助`}</div>
+                      </div>
+                    </PlanOptionBox>
+                  ))}
+                  <CustomPlanOptionBox>
+                    <div className="plan-option-box__title">自訂贊助金額</div>
+                    <div className="plan-option-box__info-input">
+                      <div>NT$</div>
+                      <input type="number" className="plan-option-box__info-input-box" />
                     </div>
-                  </PlanOptionBox>
-                ))}
-                <CustomPlanOptionBox>
-                  <div className="plan-option-box__title">自訂贊助金額</div>
-                  <div className="plan-option-box__info-input">
-                    <div>NT$</div>
-                    <input type="number" className="plan-option-box__info-input-box" />
-                  </div>
-                </CustomPlanOptionBox>
+                  </CustomPlanOptionBox>
+                </Stack>
+                <SubmitButton
+                  onClick={() => {
+                    setAmount(amount + 1);
+                    handleOnSubmit();
+                  }}
+                >
+                  前往捐款
+                </SubmitButton>
               </Stack>
-              <Button
-                style={{
-                  background: "var(--primary, #DA7D4A)",
-                  width: '100%',
-                  height: '67px',
-                  fontSize: '16px',
-                  color: '#FFF',
-                  fontWeight: "600",
-                }}
-              >
-                前往捐款
-              </Button>
-            </Stack>
+            )}
+            {status === 'success' && (
+              <SuccessTab
+                message="感謝您的捐款"
+                onClose={handleOnClose}
+              />
+            )}
           </Grid>
         )}
       />

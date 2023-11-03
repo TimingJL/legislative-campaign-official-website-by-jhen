@@ -166,6 +166,7 @@ a {
 }
 `,kv={device:zt},Ev="/legislative-campaign-official-website-by-jhen/assets/logo-9c32f846.svg",Wi="/legislative-campaign-official-website-by-jhen/assets/facebook-d813e5b7.svg",Hi="/legislative-campaign-official-website-by-jhen/assets/instagram-b6b9c5da.svg",rc="/legislative-campaign-official-website-by-jhen/assets/youtube-2f360bd4.svg",Me={advocate:"advocate",latestEvents:"latestEvents",policyIssues:"policyIssues",donate:"donate",service:"service"},Cv=$.nav`
   position: sticky;
+  position: -webkit-sticky;
   top: 0px;
   padding: 16px 24px;
   z-index: 10;
@@ -232,6 +233,7 @@ a {
   }
 `,bv=()=>c.jsx(Cv,{children:c.jsxs($v,{children:[c.jsxs(_v,{children:[c.jsx("img",{alt:"logo",src:Ev}),c.jsx("div",{className:"logo__title",children:"喵立翰 Miao Li-Han"})]}),c.jsxs(jv,{children:[c.jsx("li",{children:c.jsx("a",{href:`#${Me.advocate}`,children:"候選人主張"})}),c.jsx("li",{children:c.jsx("a",{href:`#${Me.latestEvents}`,children:"最新活動"})}),c.jsx("li",{children:c.jsx("a",{href:`#${Me.policyIssues}`,children:"政策議題"})}),c.jsx("li",{children:c.jsx("a",{href:`#${Me.donate}`,children:"小額捐款"})}),c.jsx("li",{children:c.jsx("a",{href:`#${Me.service}`,children:"民眾服務信箱"})})]}),c.jsxs(Pv,{children:[c.jsx("img",{alt:"facebook",className:"icon-facebook",src:Wi}),c.jsx("img",{alt:"instagram",className:"icon-instagram",src:Hi}),c.jsx("img",{alt:"youtube",className:"icon-youtube",src:rc})]})]})}),Tv="/legislative-campaign-official-website-by-jhen/assets/advocate-be749ae0.svg",Nv="/legislative-campaign-official-website-by-jhen/assets/latestEvents-ec6ce131.svg",Rv="/legislative-campaign-official-website-by-jhen/assets/policyIssues-82900d69.svg",Ov="/legislative-campaign-official-website-by-jhen/assets/smallDonations-4801525c.svg",Iv="/legislative-campaign-official-website-by-jhen/assets/publicServiceInbox-59fd8c4f.svg",zv=$.nav`
   position: sticky;
+  position: -webkit-sticky;
   bottom: 0px;
   background: rgba(255, 255, 255, 0.90);
   display: none;
@@ -496,6 +498,7 @@ a {
   font-size: 32px;
   font-weight: 700;
   position: sticky;
+  position: -webkit-sticky;
   top: 0px;
   z-index: 10;
   background: #FFF;

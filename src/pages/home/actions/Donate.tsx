@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import Stack from '@mui/material/Stack';
+import CircularProgress from '@mui/material/CircularProgress';
 
 import Button from 'src/components/Button';
 import ArrowForward from 'src/assets/icons/arrow-forward.svg';
@@ -61,7 +62,7 @@ const DonationPlan = styled.div`
   font-weight: 700;
 `;
 
-const PlanOptionBox = styled.div`
+const PlanOptionBox = styled.div<{ $selected: boolean; }>`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -73,6 +74,9 @@ const PlanOptionBox = styled.div`
   &:hover, &:focus {
     border: 2px solid var(--primary, #DA7D4A);
   }
+  ${props => props.$selected && `
+    border: 2px solid var(--primary, #DA7D4A);
+  `}
   .plan-option-box__title {
     color: var(--primary, #DA7D4A);
     font-size: 20px;
@@ -130,19 +134,24 @@ const CustomPlanOptionBox = styled(PlanOptionBox)`
 
 const Donate = () => {
   const [open ,setOpen] = React.useState(false);
+  const [selectedOptionId, setSelectedOptionId] = React.useState<number | null>(null);
   const [amount, setAmount] = React.useState(987655873);
+  const [customPrice, setCustomPrice] = React.useState(0);
   const [status, setStatus] = React.useState('idle');
+  const isLoading = status === 'loading';
 
   const handleOnClose = () => {
     setOpen(false);
     setStatus('idle');
+    setSelectedOptionId(null);
+    setCustomPrice(0);
   };
 
   const handleOnSubmit = () => {
     setStatus('loading');
     setTimeout(() => {
       setStatus('success');
-    }, 500);
+    }, 800);
   };
   return (
     <>
@@ -187,7 +196,14 @@ const Donate = () => {
                 <DonationPlan>捐款方案</DonationPlan>
                 <Stack spacing="16px">
                   {donatePlans.map((plan) => (
-                    <PlanOptionBox key={plan.id}>
+                    <PlanOptionBox
+                      key={plan.id}
+                      $selected={selectedOptionId === plan.id}
+                      onClick={() => {
+                        setSelectedOptionId(plan.id);
+                        setCustomPrice(0);
+                      }}
+                    >
                       <div className="plan-option-box__title">{plan.title}</div>
                       <div className="plan-option-box__info">
                         <Stack direction="row" alignItems="center">
@@ -197,22 +213,33 @@ const Donate = () => {
                       </div>
                     </PlanOptionBox>
                   ))}
-                  <CustomPlanOptionBox>
+                  <CustomPlanOptionBox
+                    $selected={selectedOptionId === donatePlans.length}
+                    onClick={() => setSelectedOptionId(donatePlans.length)}
+                  >
                     <div className="plan-option-box__title">自訂贊助金額</div>
                     <Input
                       type="number"
                       startAdornment="NT$"
                       placeholder="輸入金額"
+                      value={customPrice}
+                      onChange={(event: React.ChangeEvent<HTMLInputElement>) => setCustomPrice(Number(event.target.value))}
                     />
                   </CustomPlanOptionBox>
                 </Stack>
                 <SubmitButton
+                  disabled={
+                    selectedOptionId === null ||
+                    (selectedOptionId === donatePlans.length && customPrice === 0) || 
+                    isLoading
+                  }
                   onClick={() => {
                     setAmount(amount + 1);
                     handleOnSubmit();
                   }}
                 >
-                  前往捐款
+                  {!isLoading && '前往捐款'}
+                  {isLoading && <CircularProgress style={{ color: '#94A3B8', marginLeft: '8px' }} size={24} />}
                 </SubmitButton>
               </Stack>
             )}

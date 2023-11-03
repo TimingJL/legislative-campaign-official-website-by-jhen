@@ -21,6 +21,12 @@ const ButtonContainer = styled.button`
     transform: scale(0.95);
     transition: all 0.2s ease-in-out;
   }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: var(--gray-100, #F1F5F9);
+    color: var(--text-primary, #334155);
+  }
 `;
 
 const Icon = styled.div`

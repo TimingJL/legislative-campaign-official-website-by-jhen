@@ -199,12 +199,13 @@ const LatestEvents = () => {
                 </EventCard>
               );
             })}
-            <Button
-              endIcon={<img src={ArrowForward} />}
-              {...aosProps({ order: 2 + events.length })}
-            >
-              <h6>查看更多</h6>
-            </Button>
+            <div {...aosProps({ order: 2 + events.length })}>
+              <Button
+                endIcon={<img src={ArrowForward} />}
+              >
+                <h6>查看更多</h6>
+              </Button>
+            </div>
           </Events>
         </CenterBox>
       </Section>

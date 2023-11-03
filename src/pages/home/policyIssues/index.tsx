@@ -15,6 +15,7 @@ import { aosProps } from 'src/utils/aos';
 import { issues } from './data';
 
 const Section = styled.section`
+  overflow-y: hidden;
   scroll-margin-top: 80px;
   padding: 104px 36px;
   @media ${props => props.theme.device.tablet} {

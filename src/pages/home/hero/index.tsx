@@ -14,6 +14,7 @@ const CenterBox = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
+  overflow-y: hidden;
 `;
 
 const Slogan = styled(GradientText)`

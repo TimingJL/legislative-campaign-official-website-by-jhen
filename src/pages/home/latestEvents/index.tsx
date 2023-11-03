@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import Stack from '@mui/material/Stack';
 
+import Button from 'src/components/Button';
+import ArrowForward from 'src/assets/icons/arrow-forward.svg';
 import SectionTitle from 'src/components/SectionTitle';
 import { AnchorId } from 'src/config';
 import Modal from 'src/components/Modal';
@@ -197,6 +199,12 @@ const LatestEvents = () => {
                 </EventCard>
               );
             })}
+            <Button
+              endIcon={<img src={ArrowForward} />}
+              {...aosProps({ order: 2 + events.length })}
+            >
+              <h6>查看更多</h6>
+            </Button>
           </Events>
         </CenterBox>
       </Section>

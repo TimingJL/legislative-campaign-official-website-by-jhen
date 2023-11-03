@@ -14,13 +14,16 @@ const Container = styled.nav`
   background: rgba(255, 255, 255, 0.90);
   display: none;
   height: 68px;
+  width: 100vw;
+  overflow-x: hidden;
   @media ${props => props.theme.device.desktop} {
     display: block;
   }
 `;
 
 const Menu = styled.ul`
-  width: 100%;
+  width: 100vw;
+  overflow-x: hidden;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 8px;

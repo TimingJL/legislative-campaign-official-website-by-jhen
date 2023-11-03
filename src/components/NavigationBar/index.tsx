@@ -11,6 +11,8 @@ const Container = styled.nav`
   top: 0px;
   padding: 16px 24px;
   z-index: 10;
+  width: 100vw;
+  overflow-x: hidden;
   @media ${props => props.theme.device.tablet} {
     padding: 0px;
   }

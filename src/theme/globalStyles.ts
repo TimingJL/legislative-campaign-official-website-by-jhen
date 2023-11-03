@@ -126,6 +126,10 @@ a {
   color: inherit;
 }
 
+section {
+  overflow-x: hidden;
+}
+
 @font-face {
   font-family: "Mantou Sans";
   src: local("Mantou Sans"), url(${MantouSans}) format("truetype");

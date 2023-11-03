@@ -70,6 +70,13 @@ const IconButton = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    transform: scale(0.9);
+    transition: all 0.2s ease-in-out;
+  }
 `;
 
 const Footer = () => {

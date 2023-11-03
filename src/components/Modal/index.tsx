@@ -59,6 +59,13 @@ const CancelButton = styled.button`
   cursor: pointer;
   width: 32px;
   height: 32px;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    transform: scale(0.9);
+    transition: all 0.2s ease-in-out;
+  }
   @media ${props => props.theme.device.tablet} {
     width: 24px;
     height: 24px;

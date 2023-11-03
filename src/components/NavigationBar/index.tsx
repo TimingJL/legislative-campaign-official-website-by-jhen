@@ -12,6 +12,7 @@ const Container = styled.nav`
   padding: 16px 24px;
   z-index: 10;
   width: 100vw;
+  box-sizing: border-box;
   overflow-x: hidden;
   @media ${props => props.theme.device.tablet} {
     padding: 0px;
@@ -78,6 +79,13 @@ const SocialMedia = styled.div`
     object-fit: contain;
     width: 32px;
     height: 32px;
+    &:hover {
+      opacity: 0.8;
+    }
+    &:active {
+      transform: scale(0.9);
+      transition: all 0.2s ease-in-out;
+    }
   }
   @media ${props => props.theme.device.tablet} {
     display: none;

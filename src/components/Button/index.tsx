@@ -14,6 +14,13 @@ const ButtonContainer = styled.button`
   flex-shrink: 0;
   height: fit-content;
   width: fit-content;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    transform: scale(0.95);
+    transition: all 0.2s ease-in-out;
+  }
 `;
 
 const Icon = styled.div`

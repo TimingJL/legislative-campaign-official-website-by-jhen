@@ -43,6 +43,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Inter;
   font-style: normal;
   font-weight: 700;
+  color: var(--text-primary);
 }
 
 h1 {

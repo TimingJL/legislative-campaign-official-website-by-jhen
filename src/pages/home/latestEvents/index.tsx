@@ -185,7 +185,7 @@ const LatestEvents = () => {
           <Events>
             {[...unpinnedEvent, pinnedEvent].map(event => {
               return (
-                <EventCard key={event.title} onClick={() => setSelectedEventId(event.id)}>
+                <EventCard key={event.id} onClick={() => setSelectedEventId(event.id)}>
                   <Img src={event.imgSrc}/>
                   <div className="card__content">
                     <CardDate className="card__date">{event.date}</CardDate>

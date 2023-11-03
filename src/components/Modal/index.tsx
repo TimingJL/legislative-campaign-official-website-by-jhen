@@ -25,6 +25,9 @@ const HeaderBar = styled.div`
   padding: 0px var(--spacer-48, 48px);
   font-size: 32px;
   font-weight: 700;
+  position: sticky;
+  top: 0px;
+  background: #FFF;
   @media ${props => props.theme.device.tablet} {
     font-size: 24px;
     padding: 0px var(--spacer-16, 16px);

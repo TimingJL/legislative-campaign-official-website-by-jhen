@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
+  cursor: pointer;
   background: #FFF;
   border-radius: var(--spacer-32, 32px);
   img {
@@ -27,12 +28,13 @@ interface IProps {
   title: string;
   tag: string;
   tagColor?: string;
+  onClick: () => void;
 }
 
 const Card = (props: IProps) => {
-  const { imgSrc, title, tag, tagColor } = props;
+  const { imgSrc, title, tag, tagColor, onClick } = props;
   return (
-    <Container className="card">
+    <Container className="card" onClick={onClick}>
       <div className="card__content">
         <div style={{ display: 'none', background: tagColor }}>{tag}</div>
         <h4 className="card-content__title">{title}</h4>

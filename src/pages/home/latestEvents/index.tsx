@@ -241,7 +241,6 @@ const LatestEvents = () => {
                 <img src={selectedEvent.imgSrc.default} alt={selectedEvent.title} width="100%" style={{ objectFit: 'cover' }} />
               </picture>
               <div>{selectedEvent.title}</div>
-              <CardDate>{selectedEvent.date}</CardDate>
               <Stack direction="row" alignItems="center" spacing="16px">
                 <div>分享</div>
                 <IconButton alt="facebook" className="icon-facebook" src={facebookIcon} />

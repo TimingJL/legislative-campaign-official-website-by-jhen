@@ -206,7 +206,7 @@ const LatestEvents = () => {
                 </EventCard>
               );
             })}
-            <div {...aosProps({ order: 2 + events.length })}>
+            <div {...aosProps({ order: 1 })}>
               <Button
                 endIcon={<img src={ArrowForward} />}
               >

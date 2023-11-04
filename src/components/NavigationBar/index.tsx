@@ -65,6 +65,15 @@ const Menu = styled.ul`
   display: flex;
   gap: 32px;
   cursor: pointer;
+  li {
+    &:hover {
+      opacity: 0.8;
+    }
+    &:active {
+      transform: scale(0.9);
+      transition: all 0.2s ease-in-out;
+    }
+  }
   @media ${props => props.theme.device.desktop} {
     display: none;
   }

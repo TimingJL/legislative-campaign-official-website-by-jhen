@@ -39,6 +39,13 @@ const Menu = styled.ul`
     gap: 4px;
     font-size: 10px;
     cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+    &:active {
+      transform: scale(0.9);
+      transition: all 0.2s ease-in-out;
+    }
   }
 `;
 

@@ -130,6 +130,13 @@ const SocialMedia = styled.div`
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.10);
   & > img {
     cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+    &:active {
+      transform: scale(0.9);
+      transition: all 0.2s ease-in-out;
+    }
   }
   display: none;
   @media ${props => props.theme.device.tablet} {

@@ -1,6 +1,6 @@
-import education from 'src/assets/images/education.png';
-import entertainment from 'src/assets/images/entertainment.png';
-import medical from 'src/assets/images/medical.png';
+import education from 'src/assets/images/issue-education.png';
+import entertainment from 'src/assets/images/issue-entertainment.png';
+import medical from 'src/assets/images/issue-medical.png';
 
 export const issues = [
   {

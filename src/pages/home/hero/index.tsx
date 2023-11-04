@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 import { GradientText } from 'src/components/styled';
-import miaoLiHan from 'src/assets/images/miao-li-han.png';
+import miaoLiHanSrcHalfx from 'src/assets/images/miao-li-han_halfx.png';
+import miaoLiHanSrc1x from 'src/assets/images/miao-li-han_1x.png';
+import miaoLiHanSrc2x from 'src/assets/images/miao-li-han_2x.png';
 import facebookIcon from 'src/assets/icons/facebook.svg';
 import instagramIcon from 'src/assets/icons/instagram.svg';
 import youtubeIcon from 'src/assets/icons/youtube.svg';
@@ -158,7 +160,12 @@ const Hero = () => {
             </NameContainer>
           </Stack>
         </Title>
-        <MiaoLiHan alt="喵立翰 Miao Li-Han" src={miaoLiHan} {...aosProps({ order: 3 })} />
+        <MiaoLiHan
+          alt="喵立翰 Miao Li-Han"
+          src={miaoLiHanSrc1x}
+          srcSet={`${miaoLiHanSrcHalfx} 0.8x, ${miaoLiHanSrc1x} 3x, ${miaoLiHanSrc2x} 6x`}
+          {...aosProps({ order: 3 })}
+        />
         <SocialMedia>
           <img alt="facebook" className="icon-facebook" src={facebookIcon} />
           <img alt="instagram" className="icon-instagram" src={instagramIcon} />

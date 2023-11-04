@@ -13,6 +13,7 @@ import instagramIcon from 'src/assets/icons/instagram.svg';
 import lineIcon from 'src/assets/icons/line.svg';
 import twitterIcon from 'src/assets/icons/twitter.svg';
 import { aosProps } from 'src/utils/aos';
+import { size } from 'src/theme/breakpoints'
 
 import { events } from './data';
 
@@ -170,7 +171,12 @@ const LatestEvents = () => {
   const pinnedEvent = events.find(event => event.pin) || events[0];
   const unpinnedEvent = events.filter(event => !event.pin);
   const selectedEvent = events.find(event => event.id === selectedEventId) || {
-    imgSrc: '',
+    imgSrc: {
+      default: '',
+      desktop: '',
+      tablet: '',
+      mobile: '',
+    },
     title: '',
     description: '',
     date: '',
@@ -186,7 +192,12 @@ const LatestEvents = () => {
         />
         <CenterBox>
           <HeadlineCard onClick={() => setSelectedEventId(pinnedEvent.id)} {...aosProps({ order: 1 })}>
-            <HeadlineImg src={pinnedEvent.imgSrc} />
+            <picture>
+              <source srcSet={pinnedEvent.imgSrc.desktop} media={`(min-width:${size.desktop}px)`} />
+              <source srcSet={pinnedEvent.imgSrc.tablet} media={`(min-width:${size.tablet}px)`} />
+              <source srcSet={pinnedEvent.imgSrc.mobile} media={`(min-width:${size.mobile}px)`} />
+              <HeadlineImg src={pinnedEvent.imgSrc.default} alt={pinnedEvent.title} width="100%" style={{ objectFit: 'cover' }} />
+            </picture>
             <div className="card__content">
               <CardDate className="card__date">{pinnedEvent.date}</CardDate>
               <h5 className="card__title">{pinnedEvent.title}</h5>
@@ -196,13 +207,15 @@ const LatestEvents = () => {
           <Events>
             {[...unpinnedEvent, pinnedEvent].map((event, index) => {
               return (
-                <EventCard key={event.id} onClick={() => setSelectedEventId(event.id)} {...aosProps({ order: 2 + index })}>
-                  <Img src={event.imgSrc}/>
-                  <div className="card__content">
-                    <CardDate className="card__date">{event.date}</CardDate>
-                    <h5 className="card__title">{event.title}</h5>
-                    <div className="card__description overflow-ellipsis">{event.description}</div>
-                  </div>
+                <EventCard key={event.id} onClick={() => setSelectedEventId(event.id)} {...aosProps({ order: 2 + index, animation: 'fade-left' })}>
+                  <>
+                    <Img src={event.imgSrc.mobile} alt={event.title} />
+                    <div className="card__content">
+                      <CardDate className="card__date">{event.date}</CardDate>
+                      <h5 className="card__title">{event.title}</h5>
+                      <div className="card__description overflow-ellipsis">{event.description}</div>
+                    </div>
+                  </>
                 </EventCard>
               );
             })}
@@ -221,7 +234,12 @@ const LatestEvents = () => {
         content={(
           <Grid>
             <Stack spacing="8px">
-              <img src={selectedEvent.imgSrc} width="100%" style={{ objectFit: 'cover' }} />
+              <picture>
+                <source srcSet={selectedEvent.imgSrc.desktop} media={`(min-width:${size.desktop}px)`} />
+                <source srcSet={selectedEvent.imgSrc.tablet} media={`(min-width:${size.tablet}px)`} />
+                <source srcSet={selectedEvent.imgSrc.mobile} media={`(min-width:${size.mobile}px)`} />
+                <img src={selectedEvent.imgSrc.default} alt={selectedEvent.title} width="100%" style={{ objectFit: 'cover' }} />
+              </picture>
               <div>{selectedEvent.title}</div>
               <CardDate>{selectedEvent.date}</CardDate>
               <Stack direction="row" alignItems="center" spacing="16px">
@@ -245,7 +263,7 @@ const LatestEvents = () => {
                     <MoreEvents>
                       {unselectedEvents.map(event => (
                         <div key={event.id} style={{ cursor: 'pointer' }} onClick={() => setSelectedEventId(event.id)}>
-                          <img src={event.imgSrc} width="100%" />
+                          <img src={event.imgSrc.mobile} width="100%" />
                           <div>{event.title}</div>
                         </div>
                       ))}

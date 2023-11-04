@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import SectionTitle from 'src/components/SectionTitle';
-import advocate from 'src/assets/images/advocate.png';
+import advocate1x from 'src/assets/images/advocate_1x.png';
 import { AnchorId } from 'src/config';
 import { aosProps } from 'src/utils/aos';
 
@@ -43,7 +43,7 @@ const Paper = styled.div`
 const Img = styled.div`
   width: 100%;
   height: 100%;
-  background: url(${advocate}) no-repeat center center;
+  background: url(${advocate1x}) no-repeat center center;
   background-size: cover;
   max-height: 648px;
   @media ${props => props.theme.device.desktop} {

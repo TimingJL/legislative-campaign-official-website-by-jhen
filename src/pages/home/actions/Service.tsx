@@ -8,11 +8,14 @@ import Button from 'src/components/Button';
 import Input from 'src/components/Input';
 import Textarea from 'src/components/Textarea';
 import ArrowForward from 'src/assets/icons/arrow-forward.svg';
-import ServiceSrc from 'src/assets/images/service.png';
+import ServiceHalfxSrc from 'src/assets/images/service_halfx.png';
+import Service1xSrc from 'src/assets/images/service_1x.png';
+import Service2xSrc from 'src/assets/images/service_2x.png';
 import DonateSrc from 'src/assets/images/donate.png';
 import { AnchorId } from 'src/config';
 import Modal from 'src/components/Modal';
 import { aosProps } from 'src/utils/aos';
+import { size } from 'src/theme/breakpoints'
 
 import SuccessTab from './SuccessTab';
 import { CommonBox, Grid, ActionTitle, CommonColorBlock, SubmitButton } from './styled';
@@ -26,6 +29,7 @@ const ColorBlock = styled(CommonColorBlock)`
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
   .img__container {
     height: 480px;
   }
@@ -94,7 +98,12 @@ const Service = () => {
             <ColorBlock>
               <ActionTitle>{'分享您的想法\n一同為我們的未來打造更美好！'}</ActionTitle>
               <div className="img__container">
-                <img src={ServiceSrc} width="100%" />
+                <picture>
+                  <source srcSet={Service2xSrc} media={`(min-width:${size.desktop}px)`} />
+                  <source srcSet={Service1xSrc} media={`(min-width:${size.tablet}px)`} />
+                  <source srcSet={ServiceHalfxSrc} media={`(min-width:${size.mobile}px)`} />
+                  <img src={Service1xSrc} alt="service" width="100%" style={{ objectFit: 'cover' }} />
+                </picture>
               </div>
             </ColorBlock>
             {status !== 'success' && (

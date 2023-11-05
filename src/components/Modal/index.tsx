@@ -44,6 +44,7 @@ const Title = styled.div`
 `;
 
 const ModalContent = styled.div`
+  overflow-y: auto;
   padding: var(--spacer-8, 8px) var(--spacer-48, 48px) var(--spacer-48, 48px) var(--spacer-48, 48px);
   @media ${props => props.theme.device.tablet} {
     padding: var(--spacer-8, 8px) var(--spacer-16, 16px) var(--spacer-16, 16px) var(--spacer-16, 16px);
@@ -107,7 +108,7 @@ const Modal = (props: IProps) => {
           <img src={Cancel} alt="cancel" />
         </CancelButton>
       </HeaderBar>
-      <ModalContent>
+      <ModalContent className="modal__content">
         {content}
       </ModalContent>
     </Dialog>

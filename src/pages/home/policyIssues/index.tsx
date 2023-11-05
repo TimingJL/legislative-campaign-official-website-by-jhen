@@ -185,7 +185,13 @@ const PolicyIssues = () => {
                     <div className="more-event__title">更多政策議題</div>
                     <MoreIssues>
                       {unselectedIssues.map(event => (
-                        <div key={event.id} style={{ cursor: 'pointer' }} onClick={() => setSelectedIssueId(event.id)}>
+                        <div
+                          key={event.id}
+                          style={{ cursor: 'pointer' }}
+                          onClick={() => {
+                            setSelectedIssueId(event.id);
+                            document.querySelector('.modal__content')?.scrollTo(0, 0);
+                          }}>
                           <img src={event.imgSrc} width="100%" />
                           <div>{event.title}</div>
                         </div>

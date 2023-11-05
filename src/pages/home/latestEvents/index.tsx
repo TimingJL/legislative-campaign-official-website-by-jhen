@@ -167,6 +167,7 @@ const MoreEvents = styled.div`
 `;
 
 const LatestEvents = () => {
+  // const modalContentRef = React.useRef<HTMLDivElement>(null);
   const [selectedEventId, setSelectedEventId] = React.useState<number | null>(null);
   const pinnedEvent = events.find(event => event.pin) || events[0];
   const unpinnedEvent = events.filter(event => !event.pin);
@@ -261,7 +262,14 @@ const LatestEvents = () => {
                     <div className="more-event__title">更多活動</div>
                     <MoreEvents>
                       {unselectedEvents.map(event => (
-                        <div key={event.id} style={{ cursor: 'pointer' }} onClick={() => setSelectedEventId(event.id)}>
+                        <div
+                          key={event.id}
+                          style={{ cursor: 'pointer' }}
+                          onClick={() => {
+                            setSelectedEventId(event.id);
+                            document.querySelector('.modal__content')?.scrollTo(0, 0);
+                          }}
+                        >
                           <img src={event.imgSrc.mobile} width="100%" />
                           <div>{event.title}</div>
                         </div>

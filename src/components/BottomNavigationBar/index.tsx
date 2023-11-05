@@ -5,7 +5,7 @@ import latestEvents from 'src/assets/icons/latestEvents.svg';
 import policyIssues from 'src/assets/icons/policyIssues.svg';
 import smallDonations from 'src/assets/icons/smallDonations.svg';
 import publicServiceInbox from 'src/assets/icons/publicServiceInbox.svg';
-import { AnchorId } from 'src/config';
+import { anchorId } from 'src/config/anchor';
 
 const Container = styled.nav`
   position: sticky;
@@ -54,31 +54,31 @@ const BottomNavigationBar = () => {
     <Container>
       <Menu>
         <li>
-          <a href={`#${AnchorId.advocate}`}>
+          <a href={`#${anchorId.advocate}`}>
             <img src={advocate} />
             候選人主張
           </a>
         </li>
         <li>
-          <a href={`#${AnchorId.latestEvents}`}>
+          <a href={`#${anchorId.latestEvents}`}>
             <img src={latestEvents} />
             最新活動
           </a>
         </li>
         <li>
-          <a href={`#${AnchorId.policyIssues}`}>
+          <a href={`#${anchorId.policyIssues}`}>
             <img src={policyIssues} />
             政策議題
           </a>
         </li>
         <li>
-          <a href={`#${AnchorId.donate}`}>
+          <a href={`#${anchorId.donate}`}>
             <img src={smallDonations} />
             小額捐款
           </a>
         </li>
         <li>
-          <a href={`#${AnchorId.service}`}>
+          <a href={`#${anchorId.service}`}>
             <img src={publicServiceInbox} />
             民眾服務信箱
           </a>

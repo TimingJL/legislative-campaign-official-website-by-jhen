@@ -7,7 +7,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Button from 'src/components/Button';
 import ArrowForward from 'src/assets/icons/arrow-forward.svg';
 import DonateSrc from 'src/assets/images/donate.png';
-import { AnchorId } from 'src/config';
+import { anchorId } from 'src/config/anchor';
 import Modal from 'src/components/Modal';
 import Input from 'src/components/Input';
 import { aosProps } from 'src/utils/aos';
@@ -155,7 +155,7 @@ const Donate = () => {
   };
   return (
     <>
-      <DonateBox id={AnchorId.donate} {...aosProps({ order: 0, animation: 'fade-right' })}>
+      <DonateBox id={anchorId.donate} {...aosProps({ order: 0, animation: 'fade-right' })}>
         <div>
           <div className="action__title">小額支持喵喵</div>
           <div className="action__description">您的小筆捐款，是每隻毛孩未來的大大動力！</div>

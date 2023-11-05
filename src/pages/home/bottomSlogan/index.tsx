@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { GradientText } from 'src/components/styled';
 import { aosProps } from 'src/utils/aos';
+import { profile } from 'src/config/profile';
 
 const Section = styled.section`
   background: #FFF;
@@ -66,10 +67,10 @@ const ButtonSlogan = () => {
   return (
     <Section>
       <CenterBox>
-        <Slogan {...aosProps({ order: 0 })}>{`台灣的明天\n喵先鋪路`}</Slogan>
+        <Slogan {...aosProps({ order: 0 })}>{profile.slogan}</Slogan>
         <NameContainer {...aosProps({ order: 1, animation: 'flip-down' })}>
           <Number>3</Number>
-          <CandidateName>喵立翰 Miao Li-Han</CandidateName>
+          <CandidateName>{profile.candidateName}</CandidateName>
         </NameContainer>
       </CenterBox>
     </Section>

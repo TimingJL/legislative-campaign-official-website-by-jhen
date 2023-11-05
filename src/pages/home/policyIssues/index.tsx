@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Stack from '@mui/material/Stack';
 import Card from 'src/components/Card';
 import SectionTitle from 'src/components/SectionTitle';
-import { AnchorId } from 'src/config';
+import { anchorId } from 'src/config/anchor';
 import Modal from 'src/components/Modal';
 import facebookIcon from 'src/assets/icons/facebook.svg';
 import instagramIcon from 'src/assets/icons/instagram.svg';
@@ -135,7 +135,7 @@ const PolicyIssues = () => {
   const animationList = ['fade-up-right', 'fade-up', 'fade-up-left'];
   return (
     <>
-      <Section id={AnchorId.policyIssues}>
+      <Section id={anchorId.policyIssues}>
         <SectionTitle
           tag="POLICY ISSUES"
           title="政策議題"

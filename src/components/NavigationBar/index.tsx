@@ -3,7 +3,8 @@ import logo from 'src/assets/images/logo.svg';
 import facebookIcon from 'src/assets/icons/facebook.svg';
 import instagramIcon from 'src/assets/icons/instagram.svg';
 import youtubeIcon from 'src/assets/icons/youtube.svg';
-import { AnchorId } from 'src/config';
+import { anchorId } from 'src/config/anchor';
+import { profile } from 'src/config/profile';
 
 const Container = styled.nav`
   position: sticky;
@@ -32,10 +33,11 @@ const Box = styled.div`
   }
 `;
 
-const Logo = styled.div`
+const Logo = styled.a`
   display: flex;
   align-items: center;
   gap: 8px;
+  cursor: pointer;
   img {
     width: 52.169px;
     height: 43px;
@@ -48,6 +50,9 @@ const Logo = styled.div`
     font-style: normal;
     font-weight: 700;
     line-height: 150%; /* 36px */
+  }
+  &:hover {
+    opacity: 0.8;
   }
   @media ${props => props.theme.device.tablet} {
     gap: 4px;
@@ -105,16 +110,16 @@ const NavigationBar = () => {
   return (
     <Container>
       <Box>
-        <Logo>
+        <Logo href={`#${anchorId.hero}`}>
           <img alt="logo" src={logo} />
-          <div className="logo__title">喵立翰 Miao Li-Han</div>
+          <div className="logo__title">{profile.candidateName}</div>
         </Logo>
         <Menu>
-          <li><a href={`#${AnchorId.advocate}`}>候選人主張</a></li>
-          <li><a href={`#${AnchorId.latestEvents}`}>最新活動</a></li>
-          <li><a href={`#${AnchorId.policyIssues}`}>政策議題</a></li>
-          <li><a href={`#${AnchorId.donate}`}>小額捐款</a></li>
-          <li><a href={`#${AnchorId.service}`}>民眾服務信箱</a></li>
+          <li><a href={`#${anchorId.advocate}`}>候選人主張</a></li>
+          <li><a href={`#${anchorId.latestEvents}`}>最新活動</a></li>
+          <li><a href={`#${anchorId.policyIssues}`}>政策議題</a></li>
+          <li><a href={`#${anchorId.donate}`}>小額捐款</a></li>
+          <li><a href={`#${anchorId.service}`}>民眾服務信箱</a></li>
         </Menu>
         <SocialMedia>
           <img alt="facebook" className="icon-facebook" src={facebookIcon} />

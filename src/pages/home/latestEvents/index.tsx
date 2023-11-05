@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 import Button from 'src/components/Button';
 import ArrowForward from 'src/assets/icons/arrow-forward.svg';
 import SectionTitle from 'src/components/SectionTitle';
-import { AnchorId } from 'src/config';
+import { anchorId } from 'src/config/anchor';
 import Modal from 'src/components/Modal';
 import facebookIcon from 'src/assets/icons/facebook.svg';
 import instagramIcon from 'src/assets/icons/instagram.svg';
@@ -184,7 +184,7 @@ const LatestEvents = () => {
   const unselectedEvents = events.filter(event => event.id !== selectedEventId);
   return (
     <>
-      <Section id={AnchorId.latestEvents}>
+      <Section id={anchorId.latestEvents}>
         <SectionTitle
           tag="LATEST EVENTS"
           title="最新活動"

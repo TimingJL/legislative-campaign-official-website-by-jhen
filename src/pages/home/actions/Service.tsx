@@ -12,7 +12,7 @@ import ServiceHalfxSrc from 'src/assets/images/service_halfx.png';
 import Service1xSrc from 'src/assets/images/service_1x.png';
 import Service2xSrc from 'src/assets/images/service_2x.png';
 import DonateSrc from 'src/assets/images/donate.png';
-import { AnchorId } from 'src/config';
+import { anchorId } from 'src/config/anchor';
 import Modal from 'src/components/Modal';
 import { aosProps } from 'src/utils/aos';
 import { size } from 'src/theme/breakpoints'
@@ -74,7 +74,7 @@ const Service = () => {
   };
   return (
     <>
-      <ServiceBox id={AnchorId.service} {...aosProps({ order: 0, animation: 'fade-left' })}>
+      <ServiceBox id={anchorId.service} {...aosProps({ order: 0, animation: 'fade-left' })}>
         <div>
           <div className="action__title">民眾服務信箱</div>
           <div className="action__description">親愛的鄉親，每一位市民的意見都是我們社區前進的原動力</div>

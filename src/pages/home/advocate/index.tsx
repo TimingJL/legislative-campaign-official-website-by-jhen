@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import SectionTitle from 'src/components/SectionTitle';
 import advocate1x from 'src/assets/images/advocate_1x.png';
-import { AnchorId } from 'src/config';
+import { anchorId } from 'src/config/anchor';
 import { aosProps } from 'src/utils/aos';
 
 const Section = styled.section`
@@ -75,7 +75,7 @@ const Description = styled.div`
 
 const Advocate = () => {
   return (
-    <Section id={AnchorId.advocate}>
+    <Section id={anchorId.advocate}>
       <CenterBox {...aosProps({ order: 0, animation: 'fade-left' })}>
         <Paper>
           <SectionTitle

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import facebookIcon from 'src/assets/icons/facebook.svg';
 import instagramIcon from 'src/assets/icons/instagram.svg';
 import youtubeIcon from 'src/assets/icons/youtube.svg';
+import { profile } from 'src/config/profile';
 
 const Container = styled.footer`
   background: var(--bg-secondary, #F7ECE1);
@@ -85,7 +86,7 @@ const Footer = () => {
       <Stack>
         <NameContainer>
           <Number>3</Number>
-          <CandidateName>喵立翰 Miao Li-Han</CandidateName>
+          <CandidateName>{profile.candidateName}</CandidateName>
         </NameContainer>
         <SocialMedia>
           <IconButton>
@@ -98,14 +99,14 @@ const Footer = () => {
             <img alt="youtube" className="icon-youtube" src={youtubeIcon} />
           </IconButton>
         </SocialMedia>
-        <div>© 2023 喵立翰 Miao Li-Han 版權所有</div>
+        <div>{`© 2023 ${profile.candidateName} 版權所有`}</div>
       </Stack>
       <Stack>
         <h4>競選總部</h4>
         <div>
-          <div>辦公室地址：喵星區，毛茸茸大道88號，喵喵大樓3樓</div>
-          <div>電話：(02) 888-5678</div>
-          <div>電子郵件地址：meowoffice@linmeow.tw</div>
+          <div>辦公室地址：{profile.address}</div>
+          <div>電話：{profile.phone}</div>
+          <div>電子郵件地址：{profile.email}</div>
         </div>
       </Stack>
     </Container>

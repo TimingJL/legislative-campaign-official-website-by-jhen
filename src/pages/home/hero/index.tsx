@@ -8,6 +8,8 @@ import facebookIcon from 'src/assets/icons/facebook.svg';
 import instagramIcon from 'src/assets/icons/instagram.svg';
 import youtubeIcon from 'src/assets/icons/youtube.svg';
 import { aosProps } from 'src/utils/aos';
+import { profile } from 'src/config/profile';
+import { anchorId } from 'src/config/anchor';
 
 const Section = styled.section``;
 
@@ -148,20 +150,20 @@ const SocialMedia = styled.div`
 
 const Hero = () => {
   return (
-    <Section>
+    <Section id={anchorId.hero}>
       <CenterBox>
         <Title>
-          <Slogan {...aosProps({ order: 0 })}>{`台灣的明天\n喵先鋪路`}</Slogan>
+          <Slogan {...aosProps({ order: 0 })}>{profile.slogan}</Slogan>
           <Stack>
             <Tag {...aosProps({ order: 1 })}>2024 立委參選人</Tag>
             <NameContainer {...aosProps({ order: 2 })}>
               <Number>3</Number>
-              <CandidateName>喵立翰 Miao Li-Han</CandidateName>
+              <CandidateName>{profile.candidateName}</CandidateName>
             </NameContainer>
           </Stack>
         </Title>
         <MiaoLiHan
-          alt="喵立翰 Miao Li-Han"
+          alt={profile.candidateName}
           src={miaoLiHanSrc1x}
           srcSet={`${miaoLiHanSrcHalfx} 0.8x, ${miaoLiHanSrc1x} 3x, ${miaoLiHanSrc2x} 6x`}
           {...aosProps({ order: 3 })}

@@ -12,6 +12,6 @@ export  const aosProps = ({
   return {
     'data-aos': animation,
     'data-aos-delay': delay(order),
-    'data-aos-duration': "1500",
+    'data-aos-duration': "900",
   };
 };

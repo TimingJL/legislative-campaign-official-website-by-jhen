@@ -63,14 +63,6 @@ yarn dev
 
 ## 使用技術
 
-<!-- - React.js
-- Vite
-- Typescript
-- styled-components
-- AOS(Animation of Scroll)
-- Material UI
-- gh-pages -->
-
 **前端框架與函式庫**
 
 - React.js：前端開發框架，用於建立使用者介面和應用程式的元件。
@@ -87,7 +79,7 @@ yarn dev
 
 **動畫效果**
 
-- AOS（Animation of Scroll）：用於實現頁面滾動時的動畫效果的庫。
+- AOS（Animation of Scroll）：用於實現頁面滾動時的動畫效果的函式庫。
 
 **部署和託管**
 

@@ -167,7 +167,6 @@ const MoreEvents = styled.div`
 `;
 
 const LatestEvents = () => {
-  // const modalContentRef = React.useRef<HTMLDivElement>(null);
   const [selectedEventId, setSelectedEventId] = React.useState<number | null>(null);
   const pinnedEvent = events.find(event => event.pin) || events[0];
   const unpinnedEvent = events.filter(event => !event.pin);

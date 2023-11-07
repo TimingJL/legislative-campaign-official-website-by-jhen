@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import CountUp from 'react-countup';
 
 import Stack from '@mui/material/Stack';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -184,7 +185,10 @@ const Donate = () => {
                 </Title>
                 <Stack sx={{ mt: '16px' }}>
                   <div>目前小額贊助總金額</div>
-                  <Amount>{amount.toLocaleString()}</Amount>
+                  <Amount>
+                    {/* {amount.toLocaleString()} */}
+                    <CountUp end={amount} />
+                  </Amount>
                 </Stack>
               </div>
               <div className="img__container">

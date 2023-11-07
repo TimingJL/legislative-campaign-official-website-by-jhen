@@ -7,7 +7,9 @@ import AOS from "aos";
 
 function App() {
   React.useEffect(() => {
-    AOS.init();
+    AOS.init({
+      once: true
+    });
     AOS.refresh();
   }, []);
   return (

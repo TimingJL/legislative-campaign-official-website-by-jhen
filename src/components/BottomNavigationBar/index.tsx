@@ -12,6 +12,8 @@ const Container = styled.nav`
   position: -webkit-sticky;
   bottom: 0px;
   background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   display: none;
   height: 68px;
   width: 100vw;

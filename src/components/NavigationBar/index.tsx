@@ -1,3 +1,4 @@
+import * as React from 'react';
 import styled from 'styled-components';
 import logo from 'src/assets/images/logo.svg';
 import facebookIcon from 'src/assets/icons/facebook.svg';
@@ -6,7 +7,7 @@ import youtubeIcon from 'src/assets/icons/youtube.svg';
 import { anchorId } from 'src/config/anchor';
 import { profile } from 'src/config/profile';
 
-const Container = styled.nav`
+const Container = styled.nav<{ $isOnTop: boolean }>`
   position: sticky;
   position: -webkit-sticky;
   top: 0px;
@@ -15,6 +16,8 @@ const Container = styled.nav`
   width: 100vw;
   box-sizing: border-box;
   overflow-x: hidden;
+  background: ${props => props.$isOnTop ? 'var(--bg-primary)' : 'transparent'};
+  transition: background 0.8s ease-in-out;
   @media ${props => props.theme.device.tablet} {
     padding: 0px;
   }
@@ -22,6 +25,8 @@ const Container = styled.nav`
 
 const Box = styled.div`
   background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   display: flex;
   padding: var(--spacer-12, 12px) var(--spacer-24, 24px);
   justify-content: space-between;
@@ -106,28 +111,52 @@ const SocialMedia = styled.div`
   }
 `;
 
+const options = {
+  root: null,
+  rootMargin: '50px',
+  threshold: 0.5
+}
+
 const NavigationBar = () => {
+  const anchorRef = React.useRef(null);
+  const [isOnTop, setIsOpTop] = React.useState(false);
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const callbackFunction = (entires: any) => {
+    setIsOpTop(entires[0].isIntersecting);
+  }
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(callbackFunction, options);
+    if (anchorRef.current) {
+      observer.observe(anchorRef.current);
+    }
+  }, []);
+
   return (
-    <Container>
-      <Box>
-        <Logo href={`#${anchorId.hero}`}>
-          <img alt="logo" src={logo} />
-          <div className="logo__title">{profile.candidateName}</div>
-        </Logo>
-        <Menu>
-          <li><a href={`#${anchorId.advocate}`}>候選人主張</a></li>
-          <li><a href={`#${anchorId.latestEvents}`}>最新活動</a></li>
-          <li><a href={`#${anchorId.policyIssues}`}>政策議題</a></li>
-          <li><a href={`#${anchorId.donate}`}>小額捐款</a></li>
-          <li><a href={`#${anchorId.service}`}>民眾服務信箱</a></li>
-        </Menu>
-        <SocialMedia>
-          <img alt="facebook" className="icon-facebook" src={facebookIcon} />
-          <img alt="instagram" className="icon-instagram" src={instagramIcon} />
-          <img alt="youtube" className="icon-youtube" src={youtubeIcon} />
-        </SocialMedia>
-      </Box>
-    </Container>
+    <>
+      <div ref={anchorRef} style={{ position: 'absolute' }} />
+      <Container $isOnTop={isOnTop}>
+        <Box>
+          <Logo href={`#${anchorId.hero}`}>
+            <img alt="logo" src={logo} />
+            <div className="logo__title">{profile.candidateName}</div>
+          </Logo>
+          <Menu>
+            <li><a href={`#${anchorId.advocate}`}>候選人主張</a></li>
+            <li><a href={`#${anchorId.latestEvents}`}>最新活動</a></li>
+            <li><a href={`#${anchorId.policyIssues}`}>政策議題</a></li>
+            <li><a href={`#${anchorId.donate}`}>小額捐款</a></li>
+            <li><a href={`#${anchorId.service}`}>民眾服務信箱</a></li>
+          </Menu>
+          <SocialMedia>
+            <img alt="facebook" className="icon-facebook" src={facebookIcon} />
+            <img alt="instagram" className="icon-instagram" src={instagramIcon} />
+            <img alt="youtube" className="icon-youtube" src={youtubeIcon} />
+          </SocialMedia>
+        </Box>
+      </Container>
+    </>
   );
 };
 

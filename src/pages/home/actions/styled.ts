@@ -18,12 +18,18 @@ export const CommonBox = styled.div`
   }
   .action__content {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: flex-end;
-    gap: 24px;
+    grid-template-columns: 152px 1fr;
+    align-items: center;
+    gap: 10px;
+    height: 214px;
   }
-  .donate__img {
-    width: 100%;
+  .box__img-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .box__img {
+    width: 241px;
+    max-height: 241px;
     object-fit: contain;
   }
   h6 {
@@ -33,6 +39,14 @@ export const CommonBox = styled.div`
     padding: var(--spacer-40, 40px) var(--spacer-24, 24px);
     .action__title {
       font-size: 40px;
+    }
+    .action__content {
+      height: 126px;
+    }
+    .box__img {
+      width: 126px;
+      max-height: 126px;
+      object-fit: contain;
     }
   }
 `;

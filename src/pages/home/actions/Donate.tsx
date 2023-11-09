@@ -168,7 +168,7 @@ const Donate = () => {
           >
             <h6>小額捐款</h6>
           </Button>
-          <img src={DonateSrc} className="donate__img" />
+          <div className="box__img-container"><img src={DonateSrc} className="box__img" /></div>
         </div>
       </DonateBox>
       <Modal

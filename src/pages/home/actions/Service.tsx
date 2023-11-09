@@ -11,7 +11,7 @@ import ArrowForward from 'src/assets/icons/arrow-forward.svg';
 import ServiceHalfxSrc from 'src/assets/images/service_halfx.png';
 import Service1xSrc from 'src/assets/images/service_1x.png';
 import Service2xSrc from 'src/assets/images/service_2x.png';
-import DonateSrc from 'src/assets/images/donate.png';
+import DonateSrc from 'src/assets/images/mail.png';
 import { anchorId } from 'src/config/anchor';
 import Modal from 'src/components/Modal';
 import { aosProps } from 'src/utils/aos';
@@ -86,7 +86,7 @@ const Service = () => {
           >
             <h6>填寫表單</h6>
           </Button>
-          <img src={DonateSrc} style={{ visibility: 'hidden' }} className="donate__img" />
+          <div className="box__img-container"><img src={DonateSrc} className="box__img" /></div>
         </div>
       </ServiceBox>
       <Modal

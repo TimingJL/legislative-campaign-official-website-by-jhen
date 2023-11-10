@@ -61,6 +61,11 @@ const NameContainer = styled.div`
   align-items: center;
   gap: 5px;
   margin-top: 24px;
+  border-radius: var(--spacer-16, 16px);
+  border: 1px solid var(--default-white, #FFF);
+  background: rgba(255, 255, 255, 0.90);
+  box-shadow: 0px 4px 12px 0px rgba(163, 180, 203, 0.20);
+  padding: var(--spacer-12, 12px) var(--spacer-16, 16px);
 `;
 
 const ButtonSlogan = () => {

@@ -88,4 +88,4 @@ yarn dev
 ## 相關連結
 
 - [關卡資訊 | 第一關 - 立委競選官網](https://chalk-freedom-ec6.notion.site/b09625633b8d46dcb7908c033d01dbce)
-- [設計稿](https://www.figma.com/file/DCnuTZQ00D5VHiDkBLhxQ3/2023-The-F2E-%E7%AB%8B%E5%A7%94%E7%AB%B6%E9%81%B8%E5%AE%98%E7%B6%B2?type=design&node-id=139-170&mode=design&t=UsLYBWxOc2z0cFG2-0)
+- [設計稿（Designed by jhen）](https://www.figma.com/file/DCnuTZQ00D5VHiDkBLhxQ3/2023-The-F2E-%E7%AB%8B%E5%A7%94%E7%AB%B6%E9%81%B8%E5%AE%98%E7%B6%B2?type=design&node-id=139-170&mode=design&t=UsLYBWxOc2z0cFG2-0)

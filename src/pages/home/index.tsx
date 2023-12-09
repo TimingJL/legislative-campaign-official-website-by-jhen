@@ -2,6 +2,10 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Lottie from "lottie-react";
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import useFontFaceObserver from 'use-font-face-observer';
+
 import NavigationBar from 'src/components/NavigationBar';
 import BottomNavigationBar from 'src/components/BottomNavigationBar';
 import Hero from 'src/pages/home/hero';
@@ -28,6 +32,9 @@ const Loading = styled.div`
 
 const Home = () => {
   const [isLoading, setIsLoading] = React.useState(true);
+  const isFontLoaded = useFontFaceObserver([
+    { family: 'Mantou Sans' }, // Same name you have in your CSS
+  ]);
 
   React.useEffect(() => {
     const handleOnLoaded = () => {
@@ -41,7 +48,7 @@ const Home = () => {
     };
   }, [])
 
-  if (isLoading) {
+  if (isLoading || !isFontLoaded) {
     return (
       <Loading>
         <Lottie animationData={loadingAnimation} loop={true} />

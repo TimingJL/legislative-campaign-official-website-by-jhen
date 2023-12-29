@@ -33,6 +33,10 @@ const Home = () => {
     window.onload = function () {
       setIsLoading(false);
     };
+    setTimeout(() => {
+      // if not loaded after 1s, stop loading
+      setIsLoading(false);
+    }, 1000);
   }, []);
 
   if (isLoading) {

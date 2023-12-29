@@ -30,14 +30,8 @@ const Home = () => {
   const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
-    const handleOnLoaded = () => {
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 1500);
-    };
-    window.addEventListener("load", handleOnLoaded);
-    return () => {
-      window.removeEventListener("load", handleOnLoaded);
+    window.onload = function () {
+      setIsLoading(false);
     };
   }, []);
 

@@ -34,9 +34,9 @@ const Home = () => {
       setIsLoading(false);
     };
     setTimeout(() => {
-      // if not loaded after 1s, stop loading
+      // if not loaded after 2s, stop loading
       setIsLoading(false);
-    }, 1000);
+    }, 2000);
   }, []);
 
   if (isLoading) {
